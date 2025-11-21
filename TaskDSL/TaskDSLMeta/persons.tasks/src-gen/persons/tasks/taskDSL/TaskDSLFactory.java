@@ -51,6 +51,15 @@ public interface TaskDSLFactory extends EFactory
   Task createTask();
 
   /**
+   * Returns a new object of class '<em>Duration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Duration</em>'.
+   * @generated
+   */
+  Duration createDuration();
+
+  /**
    * Returns a new object of class '<em>Action</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -94,6 +103,186 @@ public interface TaskDSLFactory extends EFactory
    * @generated
    */
   PaymentAction createPaymentAction();
+
+  /**
+   * Returns a new object of class '<em>Int Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Int Expression</em>'.
+   * @generated
+   */
+  IntExpression createIntExpression();
+
+  /**
+   * Returns a new object of class '<em>Expression Minus</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression Minus</em>'.
+   * @generated
+   */
+  ExpressionMinus createExpressionMinus();
+
+  /**
+   * Returns a new object of class '<em>Expression Plus</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression Plus</em>'.
+   * @generated
+   */
+  ExpressionPlus createExpressionPlus();
+
+  /**
+   * Returns a new object of class '<em>Expression Bracket</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression Bracket</em>'.
+   * @generated
+   */
+  ExpressionBracket createExpressionBracket();
+
+  /**
+   * Returns a new object of class '<em>Expression Constant Int</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression Constant Int</em>'.
+   * @generated
+   */
+  ExpressionConstantInt createExpressionConstantInt();
+
+  /**
+   * Returns a new object of class '<em>Expression Balance</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression Balance</em>'.
+   * @generated
+   */
+  ExpressionBalance createExpressionBalance();
+
+  /**
+   * Returns a new object of class '<em>Boolean Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Boolean Expression</em>'.
+   * @generated
+   */
+  BooleanExpression createBooleanExpression();
+
+  /**
+   * Returns a new object of class '<em>Not Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Not Expression</em>'.
+   * @generated
+   */
+  NotExpression createNotExpression();
+
+  /**
+   * Returns a new object of class '<em>Boolean Expression Bracket</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Boolean Expression Bracket</em>'.
+   * @generated
+   */
+  BooleanExpressionBracket createBooleanExpressionBracket();
+
+  /**
+   * Returns a new object of class '<em>Boolean Expression Constant</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Boolean Expression Constant</em>'.
+   * @generated
+   */
+  BooleanExpressionConstant createBooleanExpressionConstant();
+
+  /**
+   * Returns a new object of class '<em>Expression Addition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression Addition</em>'.
+   * @generated
+   */
+  ExpressionAddition createExpressionAddition();
+
+  /**
+   * Returns a new object of class '<em>Expression Subtraction</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression Subtraction</em>'.
+   * @generated
+   */
+  ExpressionSubtraction createExpressionSubtraction();
+
+  /**
+   * Returns a new object of class '<em>Expression Multiply</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression Multiply</em>'.
+   * @generated
+   */
+  ExpressionMultiply createExpressionMultiply();
+
+  /**
+   * Returns a new object of class '<em>Expression Division</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression Division</em>'.
+   * @generated
+   */
+  ExpressionDivision createExpressionDivision();
+
+  /**
+   * Returns a new object of class '<em>Expression Maximum</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression Maximum</em>'.
+   * @generated
+   */
+  ExpressionMaximum createExpressionMaximum();
+
+  /**
+   * Returns a new object of class '<em>Expression Minimum</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression Minimum</em>'.
+   * @generated
+   */
+  ExpressionMinimum createExpressionMinimum();
+
+  /**
+   * Returns a new object of class '<em>Expression Modulo</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression Modulo</em>'.
+   * @generated
+   */
+  ExpressionModulo createExpressionModulo();
+
+  /**
+   * Returns a new object of class '<em>Expression Power</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression Power</em>'.
+   * @generated
+   */
+  ExpressionPower createExpressionPower();
+
+  /**
+   * Returns a new object of class '<em>Expression Bin Op</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression Bin Op</em>'.
+   * @generated
+   */
+  ExpressionBinOp createExpressionBinOp();
+
+  /**
+   * Returns a new object of class '<em>Expression Comp Op</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression Comp Op</em>'.
+   * @generated
+   */
+  ExpressionCompOp createExpressionCompOp();
 
   /**
    * Returns the package supported by this factory.

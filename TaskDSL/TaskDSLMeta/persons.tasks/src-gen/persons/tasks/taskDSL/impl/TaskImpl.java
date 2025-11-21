@@ -3,8 +3,12 @@
  */
 package persons.tasks.taskDSL.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -12,11 +16,13 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
 import persons.tasks.taskDSL.Action;
+import persons.tasks.taskDSL.Duration;
 import persons.tasks.taskDSL.Person;
 import persons.tasks.taskDSL.Task;
 import persons.tasks.taskDSL.TaskDSLPackage;
-import persons.tasks.taskDSL.TimeUnit;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,10 +33,9 @@ import persons.tasks.taskDSL.TimeUnit;
  * </p>
  * <ul>
  *   <li>{@link persons.tasks.taskDSL.impl.TaskImpl#getAction <em>Action</em>}</li>
- *   <li>{@link persons.tasks.taskDSL.impl.TaskImpl#getPerson <em>Person</em>}</li>
+ *   <li>{@link persons.tasks.taskDSL.impl.TaskImpl#getPersons <em>Persons</em>}</li>
  *   <li>{@link persons.tasks.taskDSL.impl.TaskImpl#getPrio <em>Prio</em>}</li>
- *   <li>{@link persons.tasks.taskDSL.impl.TaskImpl#getDl <em>Dl</em>}</li>
- *   <li>{@link persons.tasks.taskDSL.impl.TaskImpl#getUnit <em>Unit</em>}</li>
+ *   <li>{@link persons.tasks.taskDSL.impl.TaskImpl#getDuration <em>Duration</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,14 +53,14 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
   protected Action action;
 
   /**
-   * The cached value of the '{@link #getPerson() <em>Person</em>}' reference.
+   * The cached value of the '{@link #getPersons() <em>Persons</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPerson()
+   * @see #getPersons()
    * @generated
    * @ordered
    */
-  protected Person person;
+  protected EList<Person> persons;
 
   /**
    * The default value of the '{@link #getPrio() <em>Prio</em>}' attribute.
@@ -78,44 +83,14 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
   protected int prio = PRIO_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getDl() <em>Dl</em>}' attribute.
+   * The cached value of the '{@link #getDuration() <em>Duration</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDl()
+   * @see #getDuration()
    * @generated
    * @ordered
    */
-  protected static final int DL_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getDl() <em>Dl</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDl()
-   * @generated
-   * @ordered
-   */
-  protected int dl = DL_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getUnit() <em>Unit</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getUnit()
-   * @generated
-   * @ordered
-   */
-  protected static final TimeUnit UNIT_EDEFAULT = TimeUnit.MINUTE;
-
-  /**
-   * The cached value of the '{@link #getUnit() <em>Unit</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getUnit()
-   * @generated
-   * @ordered
-   */
-  protected TimeUnit unit = UNIT_EDEFAULT;
+  protected Duration duration;
 
   /**
    * <!-- begin-user-doc -->
@@ -194,43 +169,13 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
    * @generated
    */
   @Override
-  public Person getPerson()
+  public EList<Person> getPersons()
   {
-    if (person != null && person.eIsProxy())
+    if (persons == null)
     {
-      InternalEObject oldPerson = (InternalEObject)person;
-      person = (Person)eResolveProxy(oldPerson);
-      if (person != oldPerson)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, TaskDSLPackage.TASK__PERSON, oldPerson, person));
-      }
+      persons = new EObjectResolvingEList<Person>(Person.class, this, TaskDSLPackage.TASK__PERSONS);
     }
-    return person;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Person basicGetPerson()
-  {
-    return person;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setPerson(Person newPerson)
-  {
-    Person oldPerson = person;
-    person = newPerson;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TaskDSLPackage.TASK__PERSON, oldPerson, person));
+    return persons;
   }
 
   /**
@@ -264,9 +209,9 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
    * @generated
    */
   @Override
-  public int getDl()
+  public Duration getDuration()
   {
-    return dl;
+    return duration;
   }
 
   /**
@@ -274,13 +219,16 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setDl(int newDl)
+  public NotificationChain basicSetDuration(Duration newDuration, NotificationChain msgs)
   {
-    int oldDl = dl;
-    dl = newDl;
+    Duration oldDuration = duration;
+    duration = newDuration;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TaskDSLPackage.TASK__DL, oldDl, dl));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TaskDSLPackage.TASK__DURATION, oldDuration, newDuration);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -289,23 +237,20 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
    * @generated
    */
   @Override
-  public TimeUnit getUnit()
+  public void setDuration(Duration newDuration)
   {
-    return unit;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setUnit(TimeUnit newUnit)
-  {
-    TimeUnit oldUnit = unit;
-    unit = newUnit == null ? UNIT_EDEFAULT : newUnit;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TaskDSLPackage.TASK__UNIT, oldUnit, unit));
+    if (newDuration != duration)
+    {
+      NotificationChain msgs = null;
+      if (duration != null)
+        msgs = ((InternalEObject)duration).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TaskDSLPackage.TASK__DURATION, null, msgs);
+      if (newDuration != null)
+        msgs = ((InternalEObject)newDuration).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TaskDSLPackage.TASK__DURATION, null, msgs);
+      msgs = basicSetDuration(newDuration, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TaskDSLPackage.TASK__DURATION, newDuration, newDuration));
   }
 
   /**
@@ -320,6 +265,8 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
     {
       case TaskDSLPackage.TASK__ACTION:
         return basicSetAction(null, msgs);
+      case TaskDSLPackage.TASK__DURATION:
+        return basicSetDuration(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -336,15 +283,12 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
     {
       case TaskDSLPackage.TASK__ACTION:
         return getAction();
-      case TaskDSLPackage.TASK__PERSON:
-        if (resolve) return getPerson();
-        return basicGetPerson();
+      case TaskDSLPackage.TASK__PERSONS:
+        return getPersons();
       case TaskDSLPackage.TASK__PRIO:
         return getPrio();
-      case TaskDSLPackage.TASK__DL:
-        return getDl();
-      case TaskDSLPackage.TASK__UNIT:
-        return getUnit();
+      case TaskDSLPackage.TASK__DURATION:
+        return getDuration();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -354,6 +298,7 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -362,17 +307,15 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
       case TaskDSLPackage.TASK__ACTION:
         setAction((Action)newValue);
         return;
-      case TaskDSLPackage.TASK__PERSON:
-        setPerson((Person)newValue);
+      case TaskDSLPackage.TASK__PERSONS:
+        getPersons().clear();
+        getPersons().addAll((Collection<? extends Person>)newValue);
         return;
       case TaskDSLPackage.TASK__PRIO:
         setPrio((Integer)newValue);
         return;
-      case TaskDSLPackage.TASK__DL:
-        setDl((Integer)newValue);
-        return;
-      case TaskDSLPackage.TASK__UNIT:
-        setUnit((TimeUnit)newValue);
+      case TaskDSLPackage.TASK__DURATION:
+        setDuration((Duration)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -391,17 +334,14 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
       case TaskDSLPackage.TASK__ACTION:
         setAction((Action)null);
         return;
-      case TaskDSLPackage.TASK__PERSON:
-        setPerson((Person)null);
+      case TaskDSLPackage.TASK__PERSONS:
+        getPersons().clear();
         return;
       case TaskDSLPackage.TASK__PRIO:
         setPrio(PRIO_EDEFAULT);
         return;
-      case TaskDSLPackage.TASK__DL:
-        setDl(DL_EDEFAULT);
-        return;
-      case TaskDSLPackage.TASK__UNIT:
-        setUnit(UNIT_EDEFAULT);
+      case TaskDSLPackage.TASK__DURATION:
+        setDuration((Duration)null);
         return;
     }
     super.eUnset(featureID);
@@ -419,14 +359,12 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
     {
       case TaskDSLPackage.TASK__ACTION:
         return action != null;
-      case TaskDSLPackage.TASK__PERSON:
-        return person != null;
+      case TaskDSLPackage.TASK__PERSONS:
+        return persons != null && !persons.isEmpty();
       case TaskDSLPackage.TASK__PRIO:
         return prio != PRIO_EDEFAULT;
-      case TaskDSLPackage.TASK__DL:
-        return dl != DL_EDEFAULT;
-      case TaskDSLPackage.TASK__UNIT:
-        return unit != UNIT_EDEFAULT;
+      case TaskDSLPackage.TASK__DURATION:
+        return duration != null;
     }
     return super.eIsSet(featureID);
   }
@@ -444,10 +382,6 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (prio: ");
     result.append(prio);
-    result.append(", dl: ");
-    result.append(dl);
-    result.append(", unit: ");
-    result.append(unit);
     result.append(')');
     return result.toString();
   }

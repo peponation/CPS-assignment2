@@ -94,6 +94,13 @@ public class TaskDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case TaskDSLPackage.DURATION:
+      {
+        Duration duration = (Duration)theEObject;
+        T result = caseDuration(duration);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case TaskDSLPackage.ACTION:
       {
         Action action = (Action)theEObject;
@@ -130,6 +137,164 @@ public class TaskDSLSwitch<T> extends Switch<T>
         PaymentAction paymentAction = (PaymentAction)theEObject;
         T result = casePaymentAction(paymentAction);
         if (result == null) result = caseAction(paymentAction);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TaskDSLPackage.INT_EXPRESSION:
+      {
+        IntExpression intExpression = (IntExpression)theEObject;
+        T result = caseIntExpression(intExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TaskDSLPackage.EXPRESSION_MINUS:
+      {
+        ExpressionMinus expressionMinus = (ExpressionMinus)theEObject;
+        T result = caseExpressionMinus(expressionMinus);
+        if (result == null) result = caseIntExpression(expressionMinus);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TaskDSLPackage.EXPRESSION_PLUS:
+      {
+        ExpressionPlus expressionPlus = (ExpressionPlus)theEObject;
+        T result = caseExpressionPlus(expressionPlus);
+        if (result == null) result = caseIntExpression(expressionPlus);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TaskDSLPackage.EXPRESSION_BRACKET:
+      {
+        ExpressionBracket expressionBracket = (ExpressionBracket)theEObject;
+        T result = caseExpressionBracket(expressionBracket);
+        if (result == null) result = caseIntExpression(expressionBracket);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TaskDSLPackage.EXPRESSION_CONSTANT_INT:
+      {
+        ExpressionConstantInt expressionConstantInt = (ExpressionConstantInt)theEObject;
+        T result = caseExpressionConstantInt(expressionConstantInt);
+        if (result == null) result = caseIntExpression(expressionConstantInt);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TaskDSLPackage.EXPRESSION_BALANCE:
+      {
+        ExpressionBalance expressionBalance = (ExpressionBalance)theEObject;
+        T result = caseExpressionBalance(expressionBalance);
+        if (result == null) result = caseIntExpression(expressionBalance);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TaskDSLPackage.BOOLEAN_EXPRESSION:
+      {
+        BooleanExpression booleanExpression = (BooleanExpression)theEObject;
+        T result = caseBooleanExpression(booleanExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TaskDSLPackage.NOT_EXPRESSION:
+      {
+        NotExpression notExpression = (NotExpression)theEObject;
+        T result = caseNotExpression(notExpression);
+        if (result == null) result = caseBooleanExpression(notExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TaskDSLPackage.BOOLEAN_EXPRESSION_BRACKET:
+      {
+        BooleanExpressionBracket booleanExpressionBracket = (BooleanExpressionBracket)theEObject;
+        T result = caseBooleanExpressionBracket(booleanExpressionBracket);
+        if (result == null) result = caseBooleanExpression(booleanExpressionBracket);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TaskDSLPackage.BOOLEAN_EXPRESSION_CONSTANT:
+      {
+        BooleanExpressionConstant booleanExpressionConstant = (BooleanExpressionConstant)theEObject;
+        T result = caseBooleanExpressionConstant(booleanExpressionConstant);
+        if (result == null) result = caseBooleanExpression(booleanExpressionConstant);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TaskDSLPackage.EXPRESSION_ADDITION:
+      {
+        ExpressionAddition expressionAddition = (ExpressionAddition)theEObject;
+        T result = caseExpressionAddition(expressionAddition);
+        if (result == null) result = caseIntExpression(expressionAddition);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TaskDSLPackage.EXPRESSION_SUBTRACTION:
+      {
+        ExpressionSubtraction expressionSubtraction = (ExpressionSubtraction)theEObject;
+        T result = caseExpressionSubtraction(expressionSubtraction);
+        if (result == null) result = caseIntExpression(expressionSubtraction);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TaskDSLPackage.EXPRESSION_MULTIPLY:
+      {
+        ExpressionMultiply expressionMultiply = (ExpressionMultiply)theEObject;
+        T result = caseExpressionMultiply(expressionMultiply);
+        if (result == null) result = caseIntExpression(expressionMultiply);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TaskDSLPackage.EXPRESSION_DIVISION:
+      {
+        ExpressionDivision expressionDivision = (ExpressionDivision)theEObject;
+        T result = caseExpressionDivision(expressionDivision);
+        if (result == null) result = caseIntExpression(expressionDivision);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TaskDSLPackage.EXPRESSION_MAXIMUM:
+      {
+        ExpressionMaximum expressionMaximum = (ExpressionMaximum)theEObject;
+        T result = caseExpressionMaximum(expressionMaximum);
+        if (result == null) result = caseIntExpression(expressionMaximum);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TaskDSLPackage.EXPRESSION_MINIMUM:
+      {
+        ExpressionMinimum expressionMinimum = (ExpressionMinimum)theEObject;
+        T result = caseExpressionMinimum(expressionMinimum);
+        if (result == null) result = caseIntExpression(expressionMinimum);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TaskDSLPackage.EXPRESSION_MODULO:
+      {
+        ExpressionModulo expressionModulo = (ExpressionModulo)theEObject;
+        T result = caseExpressionModulo(expressionModulo);
+        if (result == null) result = caseIntExpression(expressionModulo);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TaskDSLPackage.EXPRESSION_POWER:
+      {
+        ExpressionPower expressionPower = (ExpressionPower)theEObject;
+        T result = caseExpressionPower(expressionPower);
+        if (result == null) result = caseIntExpression(expressionPower);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TaskDSLPackage.EXPRESSION_BIN_OP:
+      {
+        ExpressionBinOp expressionBinOp = (ExpressionBinOp)theEObject;
+        T result = caseExpressionBinOp(expressionBinOp);
+        if (result == null) result = caseBooleanExpression(expressionBinOp);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TaskDSLPackage.EXPRESSION_COMP_OP:
+      {
+        ExpressionCompOp expressionCompOp = (ExpressionCompOp)theEObject;
+        T result = caseExpressionCompOp(expressionCompOp);
+        if (result == null) result = caseBooleanExpression(expressionCompOp);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -181,6 +346,22 @@ public class TaskDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseTask(Task object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Duration</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Duration</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDuration(Duration object)
   {
     return null;
   }
@@ -261,6 +442,326 @@ public class TaskDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T casePaymentAction(PaymentAction object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Int Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Int Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseIntExpression(IntExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Expression Minus</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Expression Minus</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExpressionMinus(ExpressionMinus object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Expression Plus</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Expression Plus</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExpressionPlus(ExpressionPlus object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Expression Bracket</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Expression Bracket</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExpressionBracket(ExpressionBracket object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Expression Constant Int</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Expression Constant Int</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExpressionConstantInt(ExpressionConstantInt object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Expression Balance</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Expression Balance</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExpressionBalance(ExpressionBalance object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Boolean Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Boolean Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBooleanExpression(BooleanExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Not Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Not Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNotExpression(NotExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Boolean Expression Bracket</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Boolean Expression Bracket</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBooleanExpressionBracket(BooleanExpressionBracket object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Boolean Expression Constant</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Boolean Expression Constant</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBooleanExpressionConstant(BooleanExpressionConstant object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Expression Addition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Expression Addition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExpressionAddition(ExpressionAddition object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Expression Subtraction</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Expression Subtraction</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExpressionSubtraction(ExpressionSubtraction object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Expression Multiply</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Expression Multiply</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExpressionMultiply(ExpressionMultiply object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Expression Division</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Expression Division</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExpressionDivision(ExpressionDivision object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Expression Maximum</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Expression Maximum</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExpressionMaximum(ExpressionMaximum object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Expression Minimum</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Expression Minimum</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExpressionMinimum(ExpressionMinimum object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Expression Modulo</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Expression Modulo</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExpressionModulo(ExpressionModulo object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Expression Power</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Expression Power</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExpressionPower(ExpressionPower object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Expression Bin Op</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Expression Bin Op</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExpressionBinOp(ExpressionBinOp object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Expression Comp Op</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Expression Comp Op</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExpressionCompOp(ExpressionCompOp object)
   {
     return null;
   }

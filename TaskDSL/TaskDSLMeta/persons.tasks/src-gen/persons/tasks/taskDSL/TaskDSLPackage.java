@@ -69,13 +69,31 @@ public interface TaskDSLPackage extends EPackage
   int PLANNING = 0;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PLANNING__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Anonymous</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PLANNING__ANONYMOUS = 1;
+
+  /**
    * The feature id for the '<em><b>Persons</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PLANNING__PERSONS = 0;
+  int PLANNING__PERSONS = 2;
 
   /**
    * The feature id for the '<em><b>Tasks</b></em>' containment reference list.
@@ -84,7 +102,7 @@ public interface TaskDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PLANNING__TASKS = 1;
+  int PLANNING__TASKS = 3;
 
   /**
    * The number of structural features of the '<em>Planning</em>' class.
@@ -93,7 +111,7 @@ public interface TaskDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PLANNING_FEATURE_COUNT = 2;
+  int PLANNING_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link persons.tasks.taskDSL.impl.PersonImpl <em>Person</em>}' class.
@@ -143,13 +161,13 @@ public interface TaskDSLPackage extends EPackage
   int TASK__ACTION = 0;
 
   /**
-   * The feature id for the '<em><b>Person</b></em>' reference.
+   * The feature id for the '<em><b>Persons</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TASK__PERSON = 1;
+  int TASK__PERSONS = 1;
 
   /**
    * The feature id for the '<em><b>Prio</b></em>' attribute.
@@ -161,22 +179,13 @@ public interface TaskDSLPackage extends EPackage
   int TASK__PRIO = 2;
 
   /**
-   * The feature id for the '<em><b>Dl</b></em>' attribute.
+   * The feature id for the '<em><b>Duration</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TASK__DL = 3;
-
-  /**
-   * The feature id for the '<em><b>Unit</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TASK__UNIT = 4;
+  int TASK__DURATION = 3;
 
   /**
    * The number of structural features of the '<em>Task</em>' class.
@@ -185,7 +194,44 @@ public interface TaskDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TASK_FEATURE_COUNT = 5;
+  int TASK_FEATURE_COUNT = 4;
+
+  /**
+   * The meta object id for the '{@link persons.tasks.taskDSL.impl.DurationImpl <em>Duration</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see persons.tasks.taskDSL.impl.DurationImpl
+   * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getDuration()
+   * @generated
+   */
+  int DURATION = 3;
+
+  /**
+   * The feature id for the '<em><b>Dl</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DURATION__DL = 0;
+
+  /**
+   * The feature id for the '<em><b>Unit</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DURATION__UNIT = 1;
+
+  /**
+   * The number of structural features of the '<em>Duration</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DURATION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link persons.tasks.taskDSL.impl.ActionImpl <em>Action</em>}' class.
@@ -195,7 +241,7 @@ public interface TaskDSLPackage extends EPackage
    * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getAction()
    * @generated
    */
-  int ACTION = 3;
+  int ACTION = 4;
 
   /**
    * The number of structural features of the '<em>Action</em>' class.
@@ -214,7 +260,7 @@ public interface TaskDSLPackage extends EPackage
    * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getLunchAction()
    * @generated
    */
-  int LUNCH_ACTION = 4;
+  int LUNCH_ACTION = 5;
 
   /**
    * The feature id for the '<em><b>Location</b></em>' attribute.
@@ -242,7 +288,7 @@ public interface TaskDSLPackage extends EPackage
    * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getMeetingAction()
    * @generated
    */
-  int MEETING_ACTION = 5;
+  int MEETING_ACTION = 6;
 
   /**
    * The feature id for the '<em><b>Topic</b></em>' attribute.
@@ -270,7 +316,7 @@ public interface TaskDSLPackage extends EPackage
    * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getPaperAction()
    * @generated
    */
-  int PAPER_ACTION = 6;
+  int PAPER_ACTION = 7;
 
   /**
    * The feature id for the '<em><b>Report</b></em>' attribute.
@@ -298,16 +344,25 @@ public interface TaskDSLPackage extends EPackage
    * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getPaymentAction()
    * @generated
    */
-  int PAYMENT_ACTION = 7;
+  int PAYMENT_ACTION = 8;
 
   /**
-   * The feature id for the '<em><b>Amount</b></em>' attribute.
+   * The feature id for the '<em><b>Condition</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PAYMENT_ACTION__AMOUNT = ACTION_FEATURE_COUNT + 0;
+  int PAYMENT_ACTION__CONDITION = ACTION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Amount</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PAYMENT_ACTION__AMOUNT = ACTION_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Payment Action</em>' class.
@@ -316,7 +371,687 @@ public interface TaskDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PAYMENT_ACTION_FEATURE_COUNT = ACTION_FEATURE_COUNT + 1;
+  int PAYMENT_ACTION_FEATURE_COUNT = ACTION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link persons.tasks.taskDSL.impl.IntExpressionImpl <em>Int Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see persons.tasks.taskDSL.impl.IntExpressionImpl
+   * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getIntExpression()
+   * @generated
+   */
+  int INT_EXPRESSION = 9;
+
+  /**
+   * The number of structural features of the '<em>Int Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INT_EXPRESSION_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link persons.tasks.taskDSL.impl.ExpressionMinusImpl <em>Expression Minus</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see persons.tasks.taskDSL.impl.ExpressionMinusImpl
+   * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getExpressionMinus()
+   * @generated
+   */
+  int EXPRESSION_MINUS = 10;
+
+  /**
+   * The feature id for the '<em><b>Sub</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_MINUS__SUB = INT_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Expression Minus</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_MINUS_FEATURE_COUNT = INT_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link persons.tasks.taskDSL.impl.ExpressionPlusImpl <em>Expression Plus</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see persons.tasks.taskDSL.impl.ExpressionPlusImpl
+   * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getExpressionPlus()
+   * @generated
+   */
+  int EXPRESSION_PLUS = 11;
+
+  /**
+   * The feature id for the '<em><b>Sub</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_PLUS__SUB = INT_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Expression Plus</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_PLUS_FEATURE_COUNT = INT_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link persons.tasks.taskDSL.impl.ExpressionBracketImpl <em>Expression Bracket</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see persons.tasks.taskDSL.impl.ExpressionBracketImpl
+   * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getExpressionBracket()
+   * @generated
+   */
+  int EXPRESSION_BRACKET = 12;
+
+  /**
+   * The feature id for the '<em><b>Sub</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_BRACKET__SUB = INT_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Expression Bracket</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_BRACKET_FEATURE_COUNT = INT_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link persons.tasks.taskDSL.impl.ExpressionConstantIntImpl <em>Expression Constant Int</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see persons.tasks.taskDSL.impl.ExpressionConstantIntImpl
+   * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getExpressionConstantInt()
+   * @generated
+   */
+  int EXPRESSION_CONSTANT_INT = 13;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_CONSTANT_INT__VALUE = INT_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Expression Constant Int</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_CONSTANT_INT_FEATURE_COUNT = INT_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link persons.tasks.taskDSL.impl.ExpressionBalanceImpl <em>Expression Balance</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see persons.tasks.taskDSL.impl.ExpressionBalanceImpl
+   * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getExpressionBalance()
+   * @generated
+   */
+  int EXPRESSION_BALANCE = 14;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_BALANCE__VALUE = INT_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Expression Balance</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_BALANCE_FEATURE_COUNT = INT_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link persons.tasks.taskDSL.impl.BooleanExpressionImpl <em>Boolean Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see persons.tasks.taskDSL.impl.BooleanExpressionImpl
+   * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getBooleanExpression()
+   * @generated
+   */
+  int BOOLEAN_EXPRESSION = 15;
+
+  /**
+   * The number of structural features of the '<em>Boolean Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_EXPRESSION_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link persons.tasks.taskDSL.impl.NotExpressionImpl <em>Not Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see persons.tasks.taskDSL.impl.NotExpressionImpl
+   * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getNotExpression()
+   * @generated
+   */
+  int NOT_EXPRESSION = 16;
+
+  /**
+   * The feature id for the '<em><b>Sub</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NOT_EXPRESSION__SUB = BOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Not Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NOT_EXPRESSION_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link persons.tasks.taskDSL.impl.BooleanExpressionBracketImpl <em>Boolean Expression Bracket</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see persons.tasks.taskDSL.impl.BooleanExpressionBracketImpl
+   * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getBooleanExpressionBracket()
+   * @generated
+   */
+  int BOOLEAN_EXPRESSION_BRACKET = 17;
+
+  /**
+   * The feature id for the '<em><b>Sub</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_EXPRESSION_BRACKET__SUB = BOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Boolean Expression Bracket</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_EXPRESSION_BRACKET_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link persons.tasks.taskDSL.impl.BooleanExpressionConstantImpl <em>Boolean Expression Constant</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see persons.tasks.taskDSL.impl.BooleanExpressionConstantImpl
+   * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getBooleanExpressionConstant()
+   * @generated
+   */
+  int BOOLEAN_EXPRESSION_CONSTANT = 18;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_EXPRESSION_CONSTANT__VALUE = BOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Boolean Expression Constant</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOLEAN_EXPRESSION_CONSTANT_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link persons.tasks.taskDSL.impl.ExpressionAdditionImpl <em>Expression Addition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see persons.tasks.taskDSL.impl.ExpressionAdditionImpl
+   * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getExpressionAddition()
+   * @generated
+   */
+  int EXPRESSION_ADDITION = 19;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_ADDITION__LEFT = INT_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_ADDITION__RIGHT = INT_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Expression Addition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_ADDITION_FEATURE_COUNT = INT_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link persons.tasks.taskDSL.impl.ExpressionSubtractionImpl <em>Expression Subtraction</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see persons.tasks.taskDSL.impl.ExpressionSubtractionImpl
+   * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getExpressionSubtraction()
+   * @generated
+   */
+  int EXPRESSION_SUBTRACTION = 20;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_SUBTRACTION__LEFT = INT_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_SUBTRACTION__RIGHT = INT_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Expression Subtraction</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_SUBTRACTION_FEATURE_COUNT = INT_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link persons.tasks.taskDSL.impl.ExpressionMultiplyImpl <em>Expression Multiply</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see persons.tasks.taskDSL.impl.ExpressionMultiplyImpl
+   * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getExpressionMultiply()
+   * @generated
+   */
+  int EXPRESSION_MULTIPLY = 21;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_MULTIPLY__LEFT = INT_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_MULTIPLY__RIGHT = INT_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Expression Multiply</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_MULTIPLY_FEATURE_COUNT = INT_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link persons.tasks.taskDSL.impl.ExpressionDivisionImpl <em>Expression Division</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see persons.tasks.taskDSL.impl.ExpressionDivisionImpl
+   * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getExpressionDivision()
+   * @generated
+   */
+  int EXPRESSION_DIVISION = 22;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_DIVISION__LEFT = INT_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_DIVISION__RIGHT = INT_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Expression Division</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_DIVISION_FEATURE_COUNT = INT_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link persons.tasks.taskDSL.impl.ExpressionMaximumImpl <em>Expression Maximum</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see persons.tasks.taskDSL.impl.ExpressionMaximumImpl
+   * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getExpressionMaximum()
+   * @generated
+   */
+  int EXPRESSION_MAXIMUM = 23;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_MAXIMUM__LEFT = INT_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_MAXIMUM__RIGHT = INT_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Expression Maximum</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_MAXIMUM_FEATURE_COUNT = INT_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link persons.tasks.taskDSL.impl.ExpressionMinimumImpl <em>Expression Minimum</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see persons.tasks.taskDSL.impl.ExpressionMinimumImpl
+   * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getExpressionMinimum()
+   * @generated
+   */
+  int EXPRESSION_MINIMUM = 24;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_MINIMUM__LEFT = INT_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_MINIMUM__RIGHT = INT_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Expression Minimum</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_MINIMUM_FEATURE_COUNT = INT_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link persons.tasks.taskDSL.impl.ExpressionModuloImpl <em>Expression Modulo</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see persons.tasks.taskDSL.impl.ExpressionModuloImpl
+   * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getExpressionModulo()
+   * @generated
+   */
+  int EXPRESSION_MODULO = 25;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_MODULO__LEFT = INT_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_MODULO__RIGHT = INT_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Expression Modulo</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_MODULO_FEATURE_COUNT = INT_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link persons.tasks.taskDSL.impl.ExpressionPowerImpl <em>Expression Power</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see persons.tasks.taskDSL.impl.ExpressionPowerImpl
+   * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getExpressionPower()
+   * @generated
+   */
+  int EXPRESSION_POWER = 26;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_POWER__LEFT = INT_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_POWER__RIGHT = INT_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Expression Power</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_POWER_FEATURE_COUNT = INT_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link persons.tasks.taskDSL.impl.ExpressionBinOpImpl <em>Expression Bin Op</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see persons.tasks.taskDSL.impl.ExpressionBinOpImpl
+   * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getExpressionBinOp()
+   * @generated
+   */
+  int EXPRESSION_BIN_OP = 27;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_BIN_OP__LEFT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Bop</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_BIN_OP__BOP = BOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_BIN_OP__RIGHT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Expression Bin Op</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_BIN_OP_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link persons.tasks.taskDSL.impl.ExpressionCompOpImpl <em>Expression Comp Op</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see persons.tasks.taskDSL.impl.ExpressionCompOpImpl
+   * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getExpressionCompOp()
+   * @generated
+   */
+  int EXPRESSION_COMP_OP = 28;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_COMP_OP__LEFT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_COMP_OP__OP = BOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_COMP_OP__RIGHT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Expression Comp Op</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSION_COMP_OP_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link persons.tasks.taskDSL.CompareOperator <em>Compare Operator</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see persons.tasks.taskDSL.CompareOperator
+   * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getCompareOperator()
+   * @generated
+   */
+  int COMPARE_OPERATOR = 29;
+
+  /**
+   * The meta object id for the '{@link persons.tasks.taskDSL.BinaryBooleanOperator <em>Binary Boolean Operator</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see persons.tasks.taskDSL.BinaryBooleanOperator
+   * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getBinaryBooleanOperator()
+   * @generated
+   */
+  int BINARY_BOOLEAN_OPERATOR = 30;
+
+  /**
+   * The meta object id for the '{@link persons.tasks.taskDSL.Balance <em>Balance</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see persons.tasks.taskDSL.Balance
+   * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getBalance()
+   * @generated
+   */
+  int BALANCE = 31;
 
   /**
    * The meta object id for the '{@link persons.tasks.taskDSL.TimeUnit <em>Time Unit</em>}' enum.
@@ -326,7 +1061,7 @@ public interface TaskDSLPackage extends EPackage
    * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getTimeUnit()
    * @generated
    */
-  int TIME_UNIT = 8;
+  int TIME_UNIT = 32;
 
 
   /**
@@ -338,6 +1073,28 @@ public interface TaskDSLPackage extends EPackage
    * @generated
    */
   EClass getPlanning();
+
+  /**
+   * Returns the meta object for the attribute '{@link persons.tasks.taskDSL.Planning#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see persons.tasks.taskDSL.Planning#getName()
+   * @see #getPlanning()
+   * @generated
+   */
+  EAttribute getPlanning_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link persons.tasks.taskDSL.Planning#isAnonymous <em>Anonymous</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Anonymous</em>'.
+   * @see persons.tasks.taskDSL.Planning#isAnonymous()
+   * @see #getPlanning()
+   * @generated
+   */
+  EAttribute getPlanning_Anonymous();
 
   /**
    * Returns the meta object for the containment reference list '{@link persons.tasks.taskDSL.Planning#getPersons <em>Persons</em>}'.
@@ -404,15 +1161,15 @@ public interface TaskDSLPackage extends EPackage
   EReference getTask_Action();
 
   /**
-   * Returns the meta object for the reference '{@link persons.tasks.taskDSL.Task#getPerson <em>Person</em>}'.
+   * Returns the meta object for the reference list '{@link persons.tasks.taskDSL.Task#getPersons <em>Persons</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Person</em>'.
-   * @see persons.tasks.taskDSL.Task#getPerson()
+   * @return the meta object for the reference list '<em>Persons</em>'.
+   * @see persons.tasks.taskDSL.Task#getPersons()
    * @see #getTask()
    * @generated
    */
-  EReference getTask_Person();
+  EReference getTask_Persons();
 
   /**
    * Returns the meta object for the attribute '{@link persons.tasks.taskDSL.Task#getPrio <em>Prio</em>}'.
@@ -426,26 +1183,47 @@ public interface TaskDSLPackage extends EPackage
   EAttribute getTask_Prio();
 
   /**
-   * Returns the meta object for the attribute '{@link persons.tasks.taskDSL.Task#getDl <em>Dl</em>}'.
+   * Returns the meta object for the containment reference '{@link persons.tasks.taskDSL.Task#getDuration <em>Duration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Duration</em>'.
+   * @see persons.tasks.taskDSL.Task#getDuration()
+   * @see #getTask()
+   * @generated
+   */
+  EReference getTask_Duration();
+
+  /**
+   * Returns the meta object for class '{@link persons.tasks.taskDSL.Duration <em>Duration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Duration</em>'.
+   * @see persons.tasks.taskDSL.Duration
+   * @generated
+   */
+  EClass getDuration();
+
+  /**
+   * Returns the meta object for the attribute '{@link persons.tasks.taskDSL.Duration#getDl <em>Dl</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Dl</em>'.
-   * @see persons.tasks.taskDSL.Task#getDl()
-   * @see #getTask()
+   * @see persons.tasks.taskDSL.Duration#getDl()
+   * @see #getDuration()
    * @generated
    */
-  EAttribute getTask_Dl();
+  EAttribute getDuration_Dl();
 
   /**
-   * Returns the meta object for the attribute '{@link persons.tasks.taskDSL.Task#getUnit <em>Unit</em>}'.
+   * Returns the meta object for the attribute '{@link persons.tasks.taskDSL.Duration#getUnit <em>Unit</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Unit</em>'.
-   * @see persons.tasks.taskDSL.Task#getUnit()
-   * @see #getTask()
+   * @see persons.tasks.taskDSL.Duration#getUnit()
+   * @see #getDuration()
    * @generated
    */
-  EAttribute getTask_Unit();
+  EAttribute getDuration_Unit();
 
   /**
    * Returns the meta object for class '{@link persons.tasks.taskDSL.Action <em>Action</em>}'.
@@ -531,15 +1309,586 @@ public interface TaskDSLPackage extends EPackage
   EClass getPaymentAction();
 
   /**
-   * Returns the meta object for the attribute '{@link persons.tasks.taskDSL.PaymentAction#getAmount <em>Amount</em>}'.
+   * Returns the meta object for the containment reference '{@link persons.tasks.taskDSL.PaymentAction#getCondition <em>Condition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Amount</em>'.
+   * @return the meta object for the containment reference '<em>Condition</em>'.
+   * @see persons.tasks.taskDSL.PaymentAction#getCondition()
+   * @see #getPaymentAction()
+   * @generated
+   */
+  EReference getPaymentAction_Condition();
+
+  /**
+   * Returns the meta object for the containment reference '{@link persons.tasks.taskDSL.PaymentAction#getAmount <em>Amount</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Amount</em>'.
    * @see persons.tasks.taskDSL.PaymentAction#getAmount()
    * @see #getPaymentAction()
    * @generated
    */
-  EAttribute getPaymentAction_Amount();
+  EReference getPaymentAction_Amount();
+
+  /**
+   * Returns the meta object for class '{@link persons.tasks.taskDSL.IntExpression <em>Int Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Int Expression</em>'.
+   * @see persons.tasks.taskDSL.IntExpression
+   * @generated
+   */
+  EClass getIntExpression();
+
+  /**
+   * Returns the meta object for class '{@link persons.tasks.taskDSL.ExpressionMinus <em>Expression Minus</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Expression Minus</em>'.
+   * @see persons.tasks.taskDSL.ExpressionMinus
+   * @generated
+   */
+  EClass getExpressionMinus();
+
+  /**
+   * Returns the meta object for the containment reference '{@link persons.tasks.taskDSL.ExpressionMinus#getSub <em>Sub</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Sub</em>'.
+   * @see persons.tasks.taskDSL.ExpressionMinus#getSub()
+   * @see #getExpressionMinus()
+   * @generated
+   */
+  EReference getExpressionMinus_Sub();
+
+  /**
+   * Returns the meta object for class '{@link persons.tasks.taskDSL.ExpressionPlus <em>Expression Plus</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Expression Plus</em>'.
+   * @see persons.tasks.taskDSL.ExpressionPlus
+   * @generated
+   */
+  EClass getExpressionPlus();
+
+  /**
+   * Returns the meta object for the containment reference '{@link persons.tasks.taskDSL.ExpressionPlus#getSub <em>Sub</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Sub</em>'.
+   * @see persons.tasks.taskDSL.ExpressionPlus#getSub()
+   * @see #getExpressionPlus()
+   * @generated
+   */
+  EReference getExpressionPlus_Sub();
+
+  /**
+   * Returns the meta object for class '{@link persons.tasks.taskDSL.ExpressionBracket <em>Expression Bracket</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Expression Bracket</em>'.
+   * @see persons.tasks.taskDSL.ExpressionBracket
+   * @generated
+   */
+  EClass getExpressionBracket();
+
+  /**
+   * Returns the meta object for the containment reference '{@link persons.tasks.taskDSL.ExpressionBracket#getSub <em>Sub</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Sub</em>'.
+   * @see persons.tasks.taskDSL.ExpressionBracket#getSub()
+   * @see #getExpressionBracket()
+   * @generated
+   */
+  EReference getExpressionBracket_Sub();
+
+  /**
+   * Returns the meta object for class '{@link persons.tasks.taskDSL.ExpressionConstantInt <em>Expression Constant Int</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Expression Constant Int</em>'.
+   * @see persons.tasks.taskDSL.ExpressionConstantInt
+   * @generated
+   */
+  EClass getExpressionConstantInt();
+
+  /**
+   * Returns the meta object for the attribute '{@link persons.tasks.taskDSL.ExpressionConstantInt#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see persons.tasks.taskDSL.ExpressionConstantInt#getValue()
+   * @see #getExpressionConstantInt()
+   * @generated
+   */
+  EAttribute getExpressionConstantInt_Value();
+
+  /**
+   * Returns the meta object for class '{@link persons.tasks.taskDSL.ExpressionBalance <em>Expression Balance</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Expression Balance</em>'.
+   * @see persons.tasks.taskDSL.ExpressionBalance
+   * @generated
+   */
+  EClass getExpressionBalance();
+
+  /**
+   * Returns the meta object for the attribute '{@link persons.tasks.taskDSL.ExpressionBalance#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see persons.tasks.taskDSL.ExpressionBalance#getValue()
+   * @see #getExpressionBalance()
+   * @generated
+   */
+  EAttribute getExpressionBalance_Value();
+
+  /**
+   * Returns the meta object for class '{@link persons.tasks.taskDSL.BooleanExpression <em>Boolean Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Boolean Expression</em>'.
+   * @see persons.tasks.taskDSL.BooleanExpression
+   * @generated
+   */
+  EClass getBooleanExpression();
+
+  /**
+   * Returns the meta object for class '{@link persons.tasks.taskDSL.NotExpression <em>Not Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Not Expression</em>'.
+   * @see persons.tasks.taskDSL.NotExpression
+   * @generated
+   */
+  EClass getNotExpression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link persons.tasks.taskDSL.NotExpression#getSub <em>Sub</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Sub</em>'.
+   * @see persons.tasks.taskDSL.NotExpression#getSub()
+   * @see #getNotExpression()
+   * @generated
+   */
+  EReference getNotExpression_Sub();
+
+  /**
+   * Returns the meta object for class '{@link persons.tasks.taskDSL.BooleanExpressionBracket <em>Boolean Expression Bracket</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Boolean Expression Bracket</em>'.
+   * @see persons.tasks.taskDSL.BooleanExpressionBracket
+   * @generated
+   */
+  EClass getBooleanExpressionBracket();
+
+  /**
+   * Returns the meta object for the containment reference '{@link persons.tasks.taskDSL.BooleanExpressionBracket#getSub <em>Sub</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Sub</em>'.
+   * @see persons.tasks.taskDSL.BooleanExpressionBracket#getSub()
+   * @see #getBooleanExpressionBracket()
+   * @generated
+   */
+  EReference getBooleanExpressionBracket_Sub();
+
+  /**
+   * Returns the meta object for class '{@link persons.tasks.taskDSL.BooleanExpressionConstant <em>Boolean Expression Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Boolean Expression Constant</em>'.
+   * @see persons.tasks.taskDSL.BooleanExpressionConstant
+   * @generated
+   */
+  EClass getBooleanExpressionConstant();
+
+  /**
+   * Returns the meta object for the attribute '{@link persons.tasks.taskDSL.BooleanExpressionConstant#isValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see persons.tasks.taskDSL.BooleanExpressionConstant#isValue()
+   * @see #getBooleanExpressionConstant()
+   * @generated
+   */
+  EAttribute getBooleanExpressionConstant_Value();
+
+  /**
+   * Returns the meta object for class '{@link persons.tasks.taskDSL.ExpressionAddition <em>Expression Addition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Expression Addition</em>'.
+   * @see persons.tasks.taskDSL.ExpressionAddition
+   * @generated
+   */
+  EClass getExpressionAddition();
+
+  /**
+   * Returns the meta object for the containment reference '{@link persons.tasks.taskDSL.ExpressionAddition#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see persons.tasks.taskDSL.ExpressionAddition#getLeft()
+   * @see #getExpressionAddition()
+   * @generated
+   */
+  EReference getExpressionAddition_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link persons.tasks.taskDSL.ExpressionAddition#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see persons.tasks.taskDSL.ExpressionAddition#getRight()
+   * @see #getExpressionAddition()
+   * @generated
+   */
+  EReference getExpressionAddition_Right();
+
+  /**
+   * Returns the meta object for class '{@link persons.tasks.taskDSL.ExpressionSubtraction <em>Expression Subtraction</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Expression Subtraction</em>'.
+   * @see persons.tasks.taskDSL.ExpressionSubtraction
+   * @generated
+   */
+  EClass getExpressionSubtraction();
+
+  /**
+   * Returns the meta object for the containment reference '{@link persons.tasks.taskDSL.ExpressionSubtraction#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see persons.tasks.taskDSL.ExpressionSubtraction#getLeft()
+   * @see #getExpressionSubtraction()
+   * @generated
+   */
+  EReference getExpressionSubtraction_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link persons.tasks.taskDSL.ExpressionSubtraction#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see persons.tasks.taskDSL.ExpressionSubtraction#getRight()
+   * @see #getExpressionSubtraction()
+   * @generated
+   */
+  EReference getExpressionSubtraction_Right();
+
+  /**
+   * Returns the meta object for class '{@link persons.tasks.taskDSL.ExpressionMultiply <em>Expression Multiply</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Expression Multiply</em>'.
+   * @see persons.tasks.taskDSL.ExpressionMultiply
+   * @generated
+   */
+  EClass getExpressionMultiply();
+
+  /**
+   * Returns the meta object for the containment reference '{@link persons.tasks.taskDSL.ExpressionMultiply#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see persons.tasks.taskDSL.ExpressionMultiply#getLeft()
+   * @see #getExpressionMultiply()
+   * @generated
+   */
+  EReference getExpressionMultiply_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link persons.tasks.taskDSL.ExpressionMultiply#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see persons.tasks.taskDSL.ExpressionMultiply#getRight()
+   * @see #getExpressionMultiply()
+   * @generated
+   */
+  EReference getExpressionMultiply_Right();
+
+  /**
+   * Returns the meta object for class '{@link persons.tasks.taskDSL.ExpressionDivision <em>Expression Division</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Expression Division</em>'.
+   * @see persons.tasks.taskDSL.ExpressionDivision
+   * @generated
+   */
+  EClass getExpressionDivision();
+
+  /**
+   * Returns the meta object for the containment reference '{@link persons.tasks.taskDSL.ExpressionDivision#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see persons.tasks.taskDSL.ExpressionDivision#getLeft()
+   * @see #getExpressionDivision()
+   * @generated
+   */
+  EReference getExpressionDivision_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link persons.tasks.taskDSL.ExpressionDivision#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see persons.tasks.taskDSL.ExpressionDivision#getRight()
+   * @see #getExpressionDivision()
+   * @generated
+   */
+  EReference getExpressionDivision_Right();
+
+  /**
+   * Returns the meta object for class '{@link persons.tasks.taskDSL.ExpressionMaximum <em>Expression Maximum</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Expression Maximum</em>'.
+   * @see persons.tasks.taskDSL.ExpressionMaximum
+   * @generated
+   */
+  EClass getExpressionMaximum();
+
+  /**
+   * Returns the meta object for the containment reference '{@link persons.tasks.taskDSL.ExpressionMaximum#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see persons.tasks.taskDSL.ExpressionMaximum#getLeft()
+   * @see #getExpressionMaximum()
+   * @generated
+   */
+  EReference getExpressionMaximum_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link persons.tasks.taskDSL.ExpressionMaximum#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see persons.tasks.taskDSL.ExpressionMaximum#getRight()
+   * @see #getExpressionMaximum()
+   * @generated
+   */
+  EReference getExpressionMaximum_Right();
+
+  /**
+   * Returns the meta object for class '{@link persons.tasks.taskDSL.ExpressionMinimum <em>Expression Minimum</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Expression Minimum</em>'.
+   * @see persons.tasks.taskDSL.ExpressionMinimum
+   * @generated
+   */
+  EClass getExpressionMinimum();
+
+  /**
+   * Returns the meta object for the containment reference '{@link persons.tasks.taskDSL.ExpressionMinimum#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see persons.tasks.taskDSL.ExpressionMinimum#getLeft()
+   * @see #getExpressionMinimum()
+   * @generated
+   */
+  EReference getExpressionMinimum_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link persons.tasks.taskDSL.ExpressionMinimum#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see persons.tasks.taskDSL.ExpressionMinimum#getRight()
+   * @see #getExpressionMinimum()
+   * @generated
+   */
+  EReference getExpressionMinimum_Right();
+
+  /**
+   * Returns the meta object for class '{@link persons.tasks.taskDSL.ExpressionModulo <em>Expression Modulo</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Expression Modulo</em>'.
+   * @see persons.tasks.taskDSL.ExpressionModulo
+   * @generated
+   */
+  EClass getExpressionModulo();
+
+  /**
+   * Returns the meta object for the containment reference '{@link persons.tasks.taskDSL.ExpressionModulo#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see persons.tasks.taskDSL.ExpressionModulo#getLeft()
+   * @see #getExpressionModulo()
+   * @generated
+   */
+  EReference getExpressionModulo_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link persons.tasks.taskDSL.ExpressionModulo#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see persons.tasks.taskDSL.ExpressionModulo#getRight()
+   * @see #getExpressionModulo()
+   * @generated
+   */
+  EReference getExpressionModulo_Right();
+
+  /**
+   * Returns the meta object for class '{@link persons.tasks.taskDSL.ExpressionPower <em>Expression Power</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Expression Power</em>'.
+   * @see persons.tasks.taskDSL.ExpressionPower
+   * @generated
+   */
+  EClass getExpressionPower();
+
+  /**
+   * Returns the meta object for the containment reference '{@link persons.tasks.taskDSL.ExpressionPower#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see persons.tasks.taskDSL.ExpressionPower#getLeft()
+   * @see #getExpressionPower()
+   * @generated
+   */
+  EReference getExpressionPower_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link persons.tasks.taskDSL.ExpressionPower#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see persons.tasks.taskDSL.ExpressionPower#getRight()
+   * @see #getExpressionPower()
+   * @generated
+   */
+  EReference getExpressionPower_Right();
+
+  /**
+   * Returns the meta object for class '{@link persons.tasks.taskDSL.ExpressionBinOp <em>Expression Bin Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Expression Bin Op</em>'.
+   * @see persons.tasks.taskDSL.ExpressionBinOp
+   * @generated
+   */
+  EClass getExpressionBinOp();
+
+  /**
+   * Returns the meta object for the containment reference '{@link persons.tasks.taskDSL.ExpressionBinOp#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see persons.tasks.taskDSL.ExpressionBinOp#getLeft()
+   * @see #getExpressionBinOp()
+   * @generated
+   */
+  EReference getExpressionBinOp_Left();
+
+  /**
+   * Returns the meta object for the attribute '{@link persons.tasks.taskDSL.ExpressionBinOp#getBop <em>Bop</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Bop</em>'.
+   * @see persons.tasks.taskDSL.ExpressionBinOp#getBop()
+   * @see #getExpressionBinOp()
+   * @generated
+   */
+  EAttribute getExpressionBinOp_Bop();
+
+  /**
+   * Returns the meta object for the containment reference '{@link persons.tasks.taskDSL.ExpressionBinOp#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see persons.tasks.taskDSL.ExpressionBinOp#getRight()
+   * @see #getExpressionBinOp()
+   * @generated
+   */
+  EReference getExpressionBinOp_Right();
+
+  /**
+   * Returns the meta object for class '{@link persons.tasks.taskDSL.ExpressionCompOp <em>Expression Comp Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Expression Comp Op</em>'.
+   * @see persons.tasks.taskDSL.ExpressionCompOp
+   * @generated
+   */
+  EClass getExpressionCompOp();
+
+  /**
+   * Returns the meta object for the containment reference '{@link persons.tasks.taskDSL.ExpressionCompOp#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see persons.tasks.taskDSL.ExpressionCompOp#getLeft()
+   * @see #getExpressionCompOp()
+   * @generated
+   */
+  EReference getExpressionCompOp_Left();
+
+  /**
+   * Returns the meta object for the attribute '{@link persons.tasks.taskDSL.ExpressionCompOp#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see persons.tasks.taskDSL.ExpressionCompOp#getOp()
+   * @see #getExpressionCompOp()
+   * @generated
+   */
+  EAttribute getExpressionCompOp_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link persons.tasks.taskDSL.ExpressionCompOp#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see persons.tasks.taskDSL.ExpressionCompOp#getRight()
+   * @see #getExpressionCompOp()
+   * @generated
+   */
+  EReference getExpressionCompOp_Right();
+
+  /**
+   * Returns the meta object for enum '{@link persons.tasks.taskDSL.CompareOperator <em>Compare Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Compare Operator</em>'.
+   * @see persons.tasks.taskDSL.CompareOperator
+   * @generated
+   */
+  EEnum getCompareOperator();
+
+  /**
+   * Returns the meta object for enum '{@link persons.tasks.taskDSL.BinaryBooleanOperator <em>Binary Boolean Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Binary Boolean Operator</em>'.
+   * @see persons.tasks.taskDSL.BinaryBooleanOperator
+   * @generated
+   */
+  EEnum getBinaryBooleanOperator();
+
+  /**
+   * Returns the meta object for enum '{@link persons.tasks.taskDSL.Balance <em>Balance</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Balance</em>'.
+   * @see persons.tasks.taskDSL.Balance
+   * @generated
+   */
+  EEnum getBalance();
 
   /**
    * Returns the meta object for enum '{@link persons.tasks.taskDSL.TimeUnit <em>Time Unit</em>}'.
@@ -583,6 +1932,22 @@ public interface TaskDSLPackage extends EPackage
      * @generated
      */
     EClass PLANNING = eINSTANCE.getPlanning();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PLANNING__NAME = eINSTANCE.getPlanning_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Anonymous</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PLANNING__ANONYMOUS = eINSTANCE.getPlanning_Anonymous();
 
     /**
      * The meta object literal for the '<em><b>Persons</b></em>' containment reference list feature.
@@ -637,12 +2002,12 @@ public interface TaskDSLPackage extends EPackage
     EReference TASK__ACTION = eINSTANCE.getTask_Action();
 
     /**
-     * The meta object literal for the '<em><b>Person</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Persons</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TASK__PERSON = eINSTANCE.getTask_Person();
+    EReference TASK__PERSONS = eINSTANCE.getTask_Persons();
 
     /**
      * The meta object literal for the '<em><b>Prio</b></em>' attribute feature.
@@ -653,12 +2018,30 @@ public interface TaskDSLPackage extends EPackage
     EAttribute TASK__PRIO = eINSTANCE.getTask_Prio();
 
     /**
+     * The meta object literal for the '<em><b>Duration</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TASK__DURATION = eINSTANCE.getTask_Duration();
+
+    /**
+     * The meta object literal for the '{@link persons.tasks.taskDSL.impl.DurationImpl <em>Duration</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see persons.tasks.taskDSL.impl.DurationImpl
+     * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getDuration()
+     * @generated
+     */
+    EClass DURATION = eINSTANCE.getDuration();
+
+    /**
      * The meta object literal for the '<em><b>Dl</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TASK__DL = eINSTANCE.getTask_Dl();
+    EAttribute DURATION__DL = eINSTANCE.getDuration_Dl();
 
     /**
      * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
@@ -666,7 +2049,7 @@ public interface TaskDSLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TASK__UNIT = eINSTANCE.getTask_Unit();
+    EAttribute DURATION__UNIT = eINSTANCE.getDuration_Unit();
 
     /**
      * The meta object literal for the '{@link persons.tasks.taskDSL.impl.ActionImpl <em>Action</em>}' class.
@@ -743,12 +2126,490 @@ public interface TaskDSLPackage extends EPackage
     EClass PAYMENT_ACTION = eINSTANCE.getPaymentAction();
 
     /**
-     * The meta object literal for the '<em><b>Amount</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PAYMENT_ACTION__AMOUNT = eINSTANCE.getPaymentAction_Amount();
+    EReference PAYMENT_ACTION__CONDITION = eINSTANCE.getPaymentAction_Condition();
+
+    /**
+     * The meta object literal for the '<em><b>Amount</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PAYMENT_ACTION__AMOUNT = eINSTANCE.getPaymentAction_Amount();
+
+    /**
+     * The meta object literal for the '{@link persons.tasks.taskDSL.impl.IntExpressionImpl <em>Int Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see persons.tasks.taskDSL.impl.IntExpressionImpl
+     * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getIntExpression()
+     * @generated
+     */
+    EClass INT_EXPRESSION = eINSTANCE.getIntExpression();
+
+    /**
+     * The meta object literal for the '{@link persons.tasks.taskDSL.impl.ExpressionMinusImpl <em>Expression Minus</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see persons.tasks.taskDSL.impl.ExpressionMinusImpl
+     * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getExpressionMinus()
+     * @generated
+     */
+    EClass EXPRESSION_MINUS = eINSTANCE.getExpressionMinus();
+
+    /**
+     * The meta object literal for the '<em><b>Sub</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION_MINUS__SUB = eINSTANCE.getExpressionMinus_Sub();
+
+    /**
+     * The meta object literal for the '{@link persons.tasks.taskDSL.impl.ExpressionPlusImpl <em>Expression Plus</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see persons.tasks.taskDSL.impl.ExpressionPlusImpl
+     * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getExpressionPlus()
+     * @generated
+     */
+    EClass EXPRESSION_PLUS = eINSTANCE.getExpressionPlus();
+
+    /**
+     * The meta object literal for the '<em><b>Sub</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION_PLUS__SUB = eINSTANCE.getExpressionPlus_Sub();
+
+    /**
+     * The meta object literal for the '{@link persons.tasks.taskDSL.impl.ExpressionBracketImpl <em>Expression Bracket</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see persons.tasks.taskDSL.impl.ExpressionBracketImpl
+     * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getExpressionBracket()
+     * @generated
+     */
+    EClass EXPRESSION_BRACKET = eINSTANCE.getExpressionBracket();
+
+    /**
+     * The meta object literal for the '<em><b>Sub</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION_BRACKET__SUB = eINSTANCE.getExpressionBracket_Sub();
+
+    /**
+     * The meta object literal for the '{@link persons.tasks.taskDSL.impl.ExpressionConstantIntImpl <em>Expression Constant Int</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see persons.tasks.taskDSL.impl.ExpressionConstantIntImpl
+     * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getExpressionConstantInt()
+     * @generated
+     */
+    EClass EXPRESSION_CONSTANT_INT = eINSTANCE.getExpressionConstantInt();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPRESSION_CONSTANT_INT__VALUE = eINSTANCE.getExpressionConstantInt_Value();
+
+    /**
+     * The meta object literal for the '{@link persons.tasks.taskDSL.impl.ExpressionBalanceImpl <em>Expression Balance</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see persons.tasks.taskDSL.impl.ExpressionBalanceImpl
+     * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getExpressionBalance()
+     * @generated
+     */
+    EClass EXPRESSION_BALANCE = eINSTANCE.getExpressionBalance();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPRESSION_BALANCE__VALUE = eINSTANCE.getExpressionBalance_Value();
+
+    /**
+     * The meta object literal for the '{@link persons.tasks.taskDSL.impl.BooleanExpressionImpl <em>Boolean Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see persons.tasks.taskDSL.impl.BooleanExpressionImpl
+     * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getBooleanExpression()
+     * @generated
+     */
+    EClass BOOLEAN_EXPRESSION = eINSTANCE.getBooleanExpression();
+
+    /**
+     * The meta object literal for the '{@link persons.tasks.taskDSL.impl.NotExpressionImpl <em>Not Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see persons.tasks.taskDSL.impl.NotExpressionImpl
+     * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getNotExpression()
+     * @generated
+     */
+    EClass NOT_EXPRESSION = eINSTANCE.getNotExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Sub</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NOT_EXPRESSION__SUB = eINSTANCE.getNotExpression_Sub();
+
+    /**
+     * The meta object literal for the '{@link persons.tasks.taskDSL.impl.BooleanExpressionBracketImpl <em>Boolean Expression Bracket</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see persons.tasks.taskDSL.impl.BooleanExpressionBracketImpl
+     * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getBooleanExpressionBracket()
+     * @generated
+     */
+    EClass BOOLEAN_EXPRESSION_BRACKET = eINSTANCE.getBooleanExpressionBracket();
+
+    /**
+     * The meta object literal for the '<em><b>Sub</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BOOLEAN_EXPRESSION_BRACKET__SUB = eINSTANCE.getBooleanExpressionBracket_Sub();
+
+    /**
+     * The meta object literal for the '{@link persons.tasks.taskDSL.impl.BooleanExpressionConstantImpl <em>Boolean Expression Constant</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see persons.tasks.taskDSL.impl.BooleanExpressionConstantImpl
+     * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getBooleanExpressionConstant()
+     * @generated
+     */
+    EClass BOOLEAN_EXPRESSION_CONSTANT = eINSTANCE.getBooleanExpressionConstant();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BOOLEAN_EXPRESSION_CONSTANT__VALUE = eINSTANCE.getBooleanExpressionConstant_Value();
+
+    /**
+     * The meta object literal for the '{@link persons.tasks.taskDSL.impl.ExpressionAdditionImpl <em>Expression Addition</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see persons.tasks.taskDSL.impl.ExpressionAdditionImpl
+     * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getExpressionAddition()
+     * @generated
+     */
+    EClass EXPRESSION_ADDITION = eINSTANCE.getExpressionAddition();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION_ADDITION__LEFT = eINSTANCE.getExpressionAddition_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION_ADDITION__RIGHT = eINSTANCE.getExpressionAddition_Right();
+
+    /**
+     * The meta object literal for the '{@link persons.tasks.taskDSL.impl.ExpressionSubtractionImpl <em>Expression Subtraction</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see persons.tasks.taskDSL.impl.ExpressionSubtractionImpl
+     * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getExpressionSubtraction()
+     * @generated
+     */
+    EClass EXPRESSION_SUBTRACTION = eINSTANCE.getExpressionSubtraction();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION_SUBTRACTION__LEFT = eINSTANCE.getExpressionSubtraction_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION_SUBTRACTION__RIGHT = eINSTANCE.getExpressionSubtraction_Right();
+
+    /**
+     * The meta object literal for the '{@link persons.tasks.taskDSL.impl.ExpressionMultiplyImpl <em>Expression Multiply</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see persons.tasks.taskDSL.impl.ExpressionMultiplyImpl
+     * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getExpressionMultiply()
+     * @generated
+     */
+    EClass EXPRESSION_MULTIPLY = eINSTANCE.getExpressionMultiply();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION_MULTIPLY__LEFT = eINSTANCE.getExpressionMultiply_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION_MULTIPLY__RIGHT = eINSTANCE.getExpressionMultiply_Right();
+
+    /**
+     * The meta object literal for the '{@link persons.tasks.taskDSL.impl.ExpressionDivisionImpl <em>Expression Division</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see persons.tasks.taskDSL.impl.ExpressionDivisionImpl
+     * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getExpressionDivision()
+     * @generated
+     */
+    EClass EXPRESSION_DIVISION = eINSTANCE.getExpressionDivision();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION_DIVISION__LEFT = eINSTANCE.getExpressionDivision_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION_DIVISION__RIGHT = eINSTANCE.getExpressionDivision_Right();
+
+    /**
+     * The meta object literal for the '{@link persons.tasks.taskDSL.impl.ExpressionMaximumImpl <em>Expression Maximum</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see persons.tasks.taskDSL.impl.ExpressionMaximumImpl
+     * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getExpressionMaximum()
+     * @generated
+     */
+    EClass EXPRESSION_MAXIMUM = eINSTANCE.getExpressionMaximum();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION_MAXIMUM__LEFT = eINSTANCE.getExpressionMaximum_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION_MAXIMUM__RIGHT = eINSTANCE.getExpressionMaximum_Right();
+
+    /**
+     * The meta object literal for the '{@link persons.tasks.taskDSL.impl.ExpressionMinimumImpl <em>Expression Minimum</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see persons.tasks.taskDSL.impl.ExpressionMinimumImpl
+     * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getExpressionMinimum()
+     * @generated
+     */
+    EClass EXPRESSION_MINIMUM = eINSTANCE.getExpressionMinimum();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION_MINIMUM__LEFT = eINSTANCE.getExpressionMinimum_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION_MINIMUM__RIGHT = eINSTANCE.getExpressionMinimum_Right();
+
+    /**
+     * The meta object literal for the '{@link persons.tasks.taskDSL.impl.ExpressionModuloImpl <em>Expression Modulo</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see persons.tasks.taskDSL.impl.ExpressionModuloImpl
+     * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getExpressionModulo()
+     * @generated
+     */
+    EClass EXPRESSION_MODULO = eINSTANCE.getExpressionModulo();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION_MODULO__LEFT = eINSTANCE.getExpressionModulo_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION_MODULO__RIGHT = eINSTANCE.getExpressionModulo_Right();
+
+    /**
+     * The meta object literal for the '{@link persons.tasks.taskDSL.impl.ExpressionPowerImpl <em>Expression Power</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see persons.tasks.taskDSL.impl.ExpressionPowerImpl
+     * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getExpressionPower()
+     * @generated
+     */
+    EClass EXPRESSION_POWER = eINSTANCE.getExpressionPower();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION_POWER__LEFT = eINSTANCE.getExpressionPower_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION_POWER__RIGHT = eINSTANCE.getExpressionPower_Right();
+
+    /**
+     * The meta object literal for the '{@link persons.tasks.taskDSL.impl.ExpressionBinOpImpl <em>Expression Bin Op</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see persons.tasks.taskDSL.impl.ExpressionBinOpImpl
+     * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getExpressionBinOp()
+     * @generated
+     */
+    EClass EXPRESSION_BIN_OP = eINSTANCE.getExpressionBinOp();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION_BIN_OP__LEFT = eINSTANCE.getExpressionBinOp_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Bop</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPRESSION_BIN_OP__BOP = eINSTANCE.getExpressionBinOp_Bop();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION_BIN_OP__RIGHT = eINSTANCE.getExpressionBinOp_Right();
+
+    /**
+     * The meta object literal for the '{@link persons.tasks.taskDSL.impl.ExpressionCompOpImpl <em>Expression Comp Op</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see persons.tasks.taskDSL.impl.ExpressionCompOpImpl
+     * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getExpressionCompOp()
+     * @generated
+     */
+    EClass EXPRESSION_COMP_OP = eINSTANCE.getExpressionCompOp();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION_COMP_OP__LEFT = eINSTANCE.getExpressionCompOp_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPRESSION_COMP_OP__OP = eINSTANCE.getExpressionCompOp_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSION_COMP_OP__RIGHT = eINSTANCE.getExpressionCompOp_Right();
+
+    /**
+     * The meta object literal for the '{@link persons.tasks.taskDSL.CompareOperator <em>Compare Operator</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see persons.tasks.taskDSL.CompareOperator
+     * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getCompareOperator()
+     * @generated
+     */
+    EEnum COMPARE_OPERATOR = eINSTANCE.getCompareOperator();
+
+    /**
+     * The meta object literal for the '{@link persons.tasks.taskDSL.BinaryBooleanOperator <em>Binary Boolean Operator</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see persons.tasks.taskDSL.BinaryBooleanOperator
+     * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getBinaryBooleanOperator()
+     * @generated
+     */
+    EEnum BINARY_BOOLEAN_OPERATOR = eINSTANCE.getBinaryBooleanOperator();
+
+    /**
+     * The meta object literal for the '{@link persons.tasks.taskDSL.Balance <em>Balance</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see persons.tasks.taskDSL.Balance
+     * @see persons.tasks.taskDSL.impl.TaskDSLPackageImpl#getBalance()
+     * @generated
+     */
+    EEnum BALANCE = eINSTANCE.getBalance();
 
     /**
      * The meta object literal for the '{@link persons.tasks.taskDSL.TimeUnit <em>Time Unit</em>}' enum.

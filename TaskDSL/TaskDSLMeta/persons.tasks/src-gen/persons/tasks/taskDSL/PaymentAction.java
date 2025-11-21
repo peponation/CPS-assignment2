@@ -13,6 +13,7 @@ package persons.tasks.taskDSL;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link persons.tasks.taskDSL.PaymentAction#getCondition <em>Condition</em>}</li>
  *   <li>{@link persons.tasks.taskDSL.PaymentAction#getAmount <em>Amount</em>}</li>
  * </ul>
  *
@@ -23,25 +24,47 @@ package persons.tasks.taskDSL;
 public interface PaymentAction extends Action
 {
   /**
-   * Returns the value of the '<em><b>Amount</b></em>' attribute.
+   * Returns the value of the '<em><b>Condition</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Amount</em>' attribute.
-   * @see #setAmount(int)
-   * @see persons.tasks.taskDSL.TaskDSLPackage#getPaymentAction_Amount()
-   * @model
+   * @return the value of the '<em>Condition</em>' containment reference.
+   * @see #setCondition(BooleanExpression)
+   * @see persons.tasks.taskDSL.TaskDSLPackage#getPaymentAction_Condition()
+   * @model containment="true"
    * @generated
    */
-  int getAmount();
+  BooleanExpression getCondition();
 
   /**
-   * Sets the value of the '{@link persons.tasks.taskDSL.PaymentAction#getAmount <em>Amount</em>}' attribute.
+   * Sets the value of the '{@link persons.tasks.taskDSL.PaymentAction#getCondition <em>Condition</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Amount</em>' attribute.
+   * @param value the new value of the '<em>Condition</em>' containment reference.
+   * @see #getCondition()
+   * @generated
+   */
+  void setCondition(BooleanExpression value);
+
+  /**
+   * Returns the value of the '<em><b>Amount</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Amount</em>' containment reference.
+   * @see #setAmount(IntExpression)
+   * @see persons.tasks.taskDSL.TaskDSLPackage#getPaymentAction_Amount()
+   * @model containment="true"
+   * @generated
+   */
+  IntExpression getAmount();
+
+  /**
+   * Sets the value of the '{@link persons.tasks.taskDSL.PaymentAction#getAmount <em>Amount</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Amount</em>' containment reference.
    * @see #getAmount()
    * @generated
    */
-  void setAmount(int value);
+  void setAmount(IntExpression value);
 
 } // PaymentAction
