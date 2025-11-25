@@ -3,13 +3,19 @@
  */
 package gameoflife.gDSL.impl;
 
+import gameoflife.gDSL.Cell;
+import gameoflife.gDSL.Compare;
 import gameoflife.gDSL.GDSLFactory;
 import gameoflife.gDSL.GDSLPackage;
-import gameoflife.gDSL.Greeting;
+import gameoflife.gDSL.Grid;
 import gameoflife.gDSL.Model;
+import gameoflife.gDSL.Rule;
+import gameoflife.gDSL.Rules;
+import gameoflife.gDSL.State;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -35,7 +41,49 @@ public class GDSLPackageImpl extends EPackageImpl implements GDSLPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass greetingEClass = null;
+  private EClass golEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass rulesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass ruleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass gridEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass cellEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum stateEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum compareEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -116,7 +164,7 @@ public class GDSLPackageImpl extends EPackageImpl implements GDSLPackage
    * @generated
    */
   @Override
-  public EReference getModel_Greetings()
+  public EReference getModel_Gol()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(0);
   }
@@ -127,9 +175,9 @@ public class GDSLPackageImpl extends EPackageImpl implements GDSLPackage
    * @generated
    */
   @Override
-  public EClass getGreeting()
+  public EClass getGOL()
   {
-    return greetingEClass;
+    return golEClass;
   }
 
   /**
@@ -138,9 +186,174 @@ public class GDSLPackageImpl extends EPackageImpl implements GDSLPackage
    * @generated
    */
   @Override
-  public EAttribute getGreeting_Name()
+  public EAttribute getGOL_Name()
   {
-    return (EAttribute)greetingEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)golEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getGOL_Rules()
+  {
+    return (EReference)golEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getGOL_Grid()
+  {
+    return (EReference)golEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getRules()
+  {
+    return rulesEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getRules_Rules()
+  {
+    return (EReference)rulesEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getRule()
+  {
+    return ruleEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRule_State()
+  {
+    return (EAttribute)ruleEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRule_Operator()
+  {
+    return (EAttribute)ruleEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getRule_Amount()
+  {
+    return (EAttribute)ruleEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getGrid()
+  {
+    return gridEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getGrid_Cell()
+  {
+    return (EReference)gridEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getCell()
+  {
+    return cellEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCell_X()
+  {
+    return (EAttribute)cellEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getCell_Y()
+  {
+    return (EAttribute)cellEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EEnum getState()
+  {
+    return stateEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EEnum getCompare()
+  {
+    return compareEEnum;
   }
 
   /**
@@ -175,10 +388,31 @@ public class GDSLPackageImpl extends EPackageImpl implements GDSLPackage
 
     // Create classes and their features
     modelEClass = createEClass(MODEL);
-    createEReference(modelEClass, MODEL__GREETINGS);
+    createEReference(modelEClass, MODEL__GOL);
 
-    greetingEClass = createEClass(GREETING);
-    createEAttribute(greetingEClass, GREETING__NAME);
+    golEClass = createEClass(GOL);
+    createEAttribute(golEClass, GOL__NAME);
+    createEReference(golEClass, GOL__RULES);
+    createEReference(golEClass, GOL__GRID);
+
+    rulesEClass = createEClass(RULES);
+    createEReference(rulesEClass, RULES__RULES);
+
+    ruleEClass = createEClass(RULE);
+    createEAttribute(ruleEClass, RULE__STATE);
+    createEAttribute(ruleEClass, RULE__OPERATOR);
+    createEAttribute(ruleEClass, RULE__AMOUNT);
+
+    gridEClass = createEClass(GRID);
+    createEReference(gridEClass, GRID__CELL);
+
+    cellEClass = createEClass(CELL);
+    createEAttribute(cellEClass, CELL__X);
+    createEAttribute(cellEClass, CELL__Y);
+
+    // Create enums
+    stateEEnum = createEEnum(STATE);
+    compareEEnum = createEEnum(COMPARE);
   }
 
   /**
@@ -213,10 +447,39 @@ public class GDSLPackageImpl extends EPackageImpl implements GDSLPackage
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_Greetings(), this.getGreeting(), null, "greetings", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Gol(), this.getGOL(), null, "gol", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(greetingEClass, Greeting.class, "Greeting", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGreeting_Name(), ecorePackage.getEString(), "name", null, 0, 1, Greeting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(golEClass, gameoflife.gDSL.GOL.class, "GOL", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getGOL_Name(), ecorePackage.getEString(), "name", null, 0, 1, gameoflife.gDSL.GOL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGOL_Rules(), this.getRules(), null, "rules", null, 0, 1, gameoflife.gDSL.GOL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGOL_Grid(), this.getGrid(), null, "grid", null, 0, 1, gameoflife.gDSL.GOL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(rulesEClass, Rules.class, "Rules", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRules_Rules(), this.getRule(), null, "rules", null, 0, -1, Rules.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRule_State(), this.getState(), "state", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRule_Operator(), this.getCompare(), "operator", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRule_Amount(), ecorePackage.getEInt(), "amount", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(gridEClass, Grid.class, "Grid", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getGrid_Cell(), this.getCell(), null, "cell", null, 0, -1, Grid.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(cellEClass, Cell.class, "Cell", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCell_X(), ecorePackage.getEInt(), "x", null, 0, 1, Cell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCell_Y(), ecorePackage.getEInt(), "y", null, 0, 1, Cell.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    // Initialize enums and add enum literals
+    initEEnum(stateEEnum, State.class, "State");
+    addEEnumLiteral(stateEEnum, State.LIVE);
+    addEEnumLiteral(stateEEnum, State.DEAD);
+    addEEnumLiteral(stateEEnum, State.DIE);
+    addEEnumLiteral(stateEEnum, State.TO_ALIVE);
+
+    initEEnum(compareEEnum, Compare.class, "Compare");
+    addEEnumLiteral(compareEEnum, Compare.LT);
+    addEEnumLiteral(compareEEnum, Compare.GT);
+    addEEnumLiteral(compareEEnum, Compare.EQ);
 
     // Create resource
     createResource(eNS_URI);

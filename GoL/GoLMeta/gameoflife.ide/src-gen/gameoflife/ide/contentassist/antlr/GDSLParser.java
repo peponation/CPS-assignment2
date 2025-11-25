@@ -31,9 +31,24 @@ public class GDSLParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, GDSLGrammarAccess grammarAccess) {
-			builder.put(grammarAccess.getGreetingAccess().getGroup(), "rule__Greeting__Group__0");
-			builder.put(grammarAccess.getModelAccess().getGreetingsAssignment(), "rule__Model__GreetingsAssignment");
-			builder.put(grammarAccess.getGreetingAccess().getNameAssignment_1(), "rule__Greeting__NameAssignment_1");
+			builder.put(grammarAccess.getStateAccess().getAlternatives(), "rule__State__Alternatives");
+			builder.put(grammarAccess.getCompareAccess().getAlternatives(), "rule__Compare__Alternatives");
+			builder.put(grammarAccess.getGOLAccess().getGroup(), "rule__GOL__Group__0");
+			builder.put(grammarAccess.getRulesAccess().getGroup(), "rule__Rules__Group__0");
+			builder.put(grammarAccess.getRuleAccess().getGroup(), "rule__Rule__Group__0");
+			builder.put(grammarAccess.getGridAccess().getGroup(), "rule__Grid__Group__0");
+			builder.put(grammarAccess.getCellAccess().getGroup(), "rule__Cell__Group__0");
+			builder.put(grammarAccess.getModelAccess().getGolAssignment(), "rule__Model__GolAssignment");
+			builder.put(grammarAccess.getGOLAccess().getNameAssignment_1(), "rule__GOL__NameAssignment_1");
+			builder.put(grammarAccess.getGOLAccess().getRulesAssignment_2(), "rule__GOL__RulesAssignment_2");
+			builder.put(grammarAccess.getGOLAccess().getGridAssignment_3(), "rule__GOL__GridAssignment_3");
+			builder.put(grammarAccess.getRulesAccess().getRulesAssignment_2(), "rule__Rules__RulesAssignment_2");
+			builder.put(grammarAccess.getRuleAccess().getStateAssignment_0(), "rule__Rule__StateAssignment_0");
+			builder.put(grammarAccess.getRuleAccess().getOperatorAssignment_3(), "rule__Rule__OperatorAssignment_3");
+			builder.put(grammarAccess.getRuleAccess().getAmountAssignment_4(), "rule__Rule__AmountAssignment_4");
+			builder.put(grammarAccess.getGridAccess().getCellAssignment_2(), "rule__Grid__CellAssignment_2");
+			builder.put(grammarAccess.getCellAccess().getXAssignment_1(), "rule__Cell__XAssignment_1");
+			builder.put(grammarAccess.getCellAccess().getYAssignment_3(), "rule__Cell__YAssignment_3");
 		}
 	}
 	

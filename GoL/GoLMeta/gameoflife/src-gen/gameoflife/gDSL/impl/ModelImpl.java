@@ -4,22 +4,17 @@
 package gameoflife.gDSL.impl;
 
 import gameoflife.gDSL.GDSLPackage;
-import gameoflife.gDSL.Greeting;
+import gameoflife.gDSL.GOL;
 import gameoflife.gDSL.Model;
 
-import java.util.Collection;
-
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +24,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link gameoflife.gDSL.impl.ModelImpl#getGreetings <em>Greetings</em>}</li>
+ *   <li>{@link gameoflife.gDSL.impl.ModelImpl#getGol <em>Gol</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,14 +32,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
   /**
-   * The cached value of the '{@link #getGreetings() <em>Greetings</em>}' containment reference list.
+   * The cached value of the '{@link #getGol() <em>Gol</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getGreetings()
+   * @see #getGol()
    * @generated
    * @ordered
    */
-  protected EList<Greeting> greetings;
+  protected GOL gol;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,13 +68,48 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    */
   @Override
-  public EList<Greeting> getGreetings()
+  public GOL getGol()
   {
-    if (greetings == null)
+    return gol;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetGol(GOL newGol, NotificationChain msgs)
+  {
+    GOL oldGol = gol;
+    gol = newGol;
+    if (eNotificationRequired())
     {
-      greetings = new EObjectContainmentEList<Greeting>(Greeting.class, this, GDSLPackage.MODEL__GREETINGS);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GDSLPackage.MODEL__GOL, oldGol, newGol);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return greetings;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setGol(GOL newGol)
+  {
+    if (newGol != gol)
+    {
+      NotificationChain msgs = null;
+      if (gol != null)
+        msgs = ((InternalEObject)gol).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GDSLPackage.MODEL__GOL, null, msgs);
+      if (newGol != null)
+        msgs = ((InternalEObject)newGol).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - GDSLPackage.MODEL__GOL, null, msgs);
+      msgs = basicSetGol(newGol, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, GDSLPackage.MODEL__GOL, newGol, newGol));
   }
 
   /**
@@ -92,8 +122,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case GDSLPackage.MODEL__GREETINGS:
-        return ((InternalEList<?>)getGreetings()).basicRemove(otherEnd, msgs);
+      case GDSLPackage.MODEL__GOL:
+        return basicSetGol(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -108,8 +138,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case GDSLPackage.MODEL__GREETINGS:
-        return getGreetings();
+      case GDSLPackage.MODEL__GOL:
+        return getGol();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -119,15 +149,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case GDSLPackage.MODEL__GREETINGS:
-        getGreetings().clear();
-        getGreetings().addAll((Collection<? extends Greeting>)newValue);
+      case GDSLPackage.MODEL__GOL:
+        setGol((GOL)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -143,8 +171,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case GDSLPackage.MODEL__GREETINGS:
-        getGreetings().clear();
+      case GDSLPackage.MODEL__GOL:
+        setGol((GOL)null);
         return;
     }
     super.eUnset(featureID);
@@ -160,8 +188,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case GDSLPackage.MODEL__GREETINGS:
-        return greetings != null && !greetings.isEmpty();
+      case GDSLPackage.MODEL__GOL:
+        return gol != null;
     }
     return super.eIsSet(featureID);
   }

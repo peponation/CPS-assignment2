@@ -6,6 +6,7 @@ package gameoflife.gDSL.impl;
 import gameoflife.gDSL.*;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -66,9 +67,51 @@ public class GDSLFactoryImpl extends EFactoryImpl implements GDSLFactory
     switch (eClass.getClassifierID())
     {
       case GDSLPackage.MODEL: return createModel();
-      case GDSLPackage.GREETING: return createGreeting();
+      case GDSLPackage.GOL: return createGOL();
+      case GDSLPackage.RULES: return createRules();
+      case GDSLPackage.RULE: return createRule();
+      case GDSLPackage.GRID: return createGrid();
+      case GDSLPackage.CELL: return createCell();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object createFromString(EDataType eDataType, String initialValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case GDSLPackage.STATE:
+        return createStateFromString(eDataType, initialValue);
+      case GDSLPackage.COMPARE:
+        return createCompareFromString(eDataType, initialValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String convertToString(EDataType eDataType, Object instanceValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case GDSLPackage.STATE:
+        return convertStateToString(eDataType, instanceValue);
+      case GDSLPackage.COMPARE:
+        return convertCompareToString(eDataType, instanceValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
   }
 
@@ -90,10 +133,102 @@ public class GDSLFactoryImpl extends EFactoryImpl implements GDSLFactory
    * @generated
    */
   @Override
-  public Greeting createGreeting()
+  public GOL createGOL()
   {
-    GreetingImpl greeting = new GreetingImpl();
-    return greeting;
+    GOLImpl gol = new GOLImpl();
+    return gol;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Rules createRules()
+  {
+    RulesImpl rules = new RulesImpl();
+    return rules;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Rule createRule()
+  {
+    RuleImpl rule = new RuleImpl();
+    return rule;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Grid createGrid()
+  {
+    GridImpl grid = new GridImpl();
+    return grid;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Cell createCell()
+  {
+    CellImpl cell = new CellImpl();
+    return cell;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public State createStateFromString(EDataType eDataType, String initialValue)
+  {
+    State result = State.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertStateToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Compare createCompareFromString(EDataType eDataType, String initialValue)
+  {
+    Compare result = Compare.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertCompareToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**

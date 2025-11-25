@@ -6,11 +6,39 @@
     copyrightFields="false" runtimeVersion="2.36">
   <genPackages prefix="GDSL" basePackage="gameoflife" disposableProviderFactory="true"
       fileExtensions="gdsl" ecorePackage="GDSL.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="GDSL.ecore#//State">
+      <genEnumLiterals ecoreEnumLiteral="GDSL.ecore#//State/Live"/>
+      <genEnumLiterals ecoreEnumLiteral="GDSL.ecore#//State/Dead"/>
+      <genEnumLiterals ecoreEnumLiteral="GDSL.ecore#//State/Die"/>
+      <genEnumLiterals ecoreEnumLiteral="GDSL.ecore#//State/ToAlive"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="GDSL.ecore#//Compare">
+      <genEnumLiterals ecoreEnumLiteral="GDSL.ecore#//Compare/LT"/>
+      <genEnumLiterals ecoreEnumLiteral="GDSL.ecore#//Compare/GT"/>
+      <genEnumLiterals ecoreEnumLiteral="GDSL.ecore#//Compare/EQ"/>
+    </genEnums>
     <genClasses ecoreClass="GDSL.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GDSL.ecore#//Model/greetings"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GDSL.ecore#//Model/gol"/>
     </genClasses>
-    <genClasses ecoreClass="GDSL.ecore#//Greeting">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GDSL.ecore#//Greeting/name"/>
+    <genClasses ecoreClass="GDSL.ecore#//GOL">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GDSL.ecore#//GOL/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GDSL.ecore#//GOL/rules"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GDSL.ecore#//GOL/grid"/>
+    </genClasses>
+    <genClasses ecoreClass="GDSL.ecore#//Rules">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GDSL.ecore#//Rules/rules"/>
+    </genClasses>
+    <genClasses ecoreClass="GDSL.ecore#//Rule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GDSL.ecore#//Rule/state"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GDSL.ecore#//Rule/operator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GDSL.ecore#//Rule/amount"/>
+    </genClasses>
+    <genClasses ecoreClass="GDSL.ecore#//Grid">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference GDSL.ecore#//Grid/cell"/>
+    </genClasses>
+    <genClasses ecoreClass="GDSL.ecore#//Cell">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GDSL.ecore#//Cell/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute GDSL.ecore#//Cell/y"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

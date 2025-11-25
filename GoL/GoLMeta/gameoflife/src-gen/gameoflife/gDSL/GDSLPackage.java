@@ -5,6 +5,7 @@ package gameoflife.gDSL;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -68,13 +69,13 @@ public interface GDSLPackage extends EPackage
   int MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>Greetings</b></em>' containment reference list.
+   * The feature id for the '<em><b>Gol</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__GREETINGS = 0;
+  int MODEL__GOL = 0;
 
   /**
    * The number of structural features of the '<em>Model</em>' class.
@@ -86,14 +87,14 @@ public interface GDSLPackage extends EPackage
   int MODEL_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link gameoflife.gDSL.impl.GreetingImpl <em>Greeting</em>}' class.
+   * The meta object id for the '{@link gameoflife.gDSL.impl.GOLImpl <em>GOL</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see gameoflife.gDSL.impl.GreetingImpl
-   * @see gameoflife.gDSL.impl.GDSLPackageImpl#getGreeting()
+   * @see gameoflife.gDSL.impl.GOLImpl
+   * @see gameoflife.gDSL.impl.GDSLPackageImpl#getGOL()
    * @generated
    */
-  int GREETING = 1;
+  int GOL = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -102,16 +103,193 @@ public interface GDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GREETING__NAME = 0;
+  int GOL__NAME = 0;
 
   /**
-   * The number of structural features of the '<em>Greeting</em>' class.
+   * The feature id for the '<em><b>Rules</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GREETING_FEATURE_COUNT = 1;
+  int GOL__RULES = 1;
+
+  /**
+   * The feature id for the '<em><b>Grid</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOL__GRID = 2;
+
+  /**
+   * The number of structural features of the '<em>GOL</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GOL_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link gameoflife.gDSL.impl.RulesImpl <em>Rules</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see gameoflife.gDSL.impl.RulesImpl
+   * @see gameoflife.gDSL.impl.GDSLPackageImpl#getRules()
+   * @generated
+   */
+  int RULES = 2;
+
+  /**
+   * The feature id for the '<em><b>Rules</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULES__RULES = 0;
+
+  /**
+   * The number of structural features of the '<em>Rules</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULES_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link gameoflife.gDSL.impl.RuleImpl <em>Rule</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see gameoflife.gDSL.impl.RuleImpl
+   * @see gameoflife.gDSL.impl.GDSLPackageImpl#getRule()
+   * @generated
+   */
+  int RULE = 3;
+
+  /**
+   * The feature id for the '<em><b>State</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE__STATE = 0;
+
+  /**
+   * The feature id for the '<em><b>Operator</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE__OPERATOR = 1;
+
+  /**
+   * The feature id for the '<em><b>Amount</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE__AMOUNT = 2;
+
+  /**
+   * The number of structural features of the '<em>Rule</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link gameoflife.gDSL.impl.GridImpl <em>Grid</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see gameoflife.gDSL.impl.GridImpl
+   * @see gameoflife.gDSL.impl.GDSLPackageImpl#getGrid()
+   * @generated
+   */
+  int GRID = 4;
+
+  /**
+   * The feature id for the '<em><b>Cell</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GRID__CELL = 0;
+
+  /**
+   * The number of structural features of the '<em>Grid</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GRID_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link gameoflife.gDSL.impl.CellImpl <em>Cell</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see gameoflife.gDSL.impl.CellImpl
+   * @see gameoflife.gDSL.impl.GDSLPackageImpl#getCell()
+   * @generated
+   */
+  int CELL = 5;
+
+  /**
+   * The feature id for the '<em><b>X</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CELL__X = 0;
+
+  /**
+   * The feature id for the '<em><b>Y</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CELL__Y = 1;
+
+  /**
+   * The number of structural features of the '<em>Cell</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CELL_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link gameoflife.gDSL.State <em>State</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see gameoflife.gDSL.State
+   * @see gameoflife.gDSL.impl.GDSLPackageImpl#getState()
+   * @generated
+   */
+  int STATE = 6;
+
+  /**
+   * The meta object id for the '{@link gameoflife.gDSL.Compare <em>Compare</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see gameoflife.gDSL.Compare
+   * @see gameoflife.gDSL.impl.GDSLPackageImpl#getCompare()
+   * @generated
+   */
+  int COMPARE = 7;
 
 
   /**
@@ -125,36 +303,195 @@ public interface GDSLPackage extends EPackage
   EClass getModel();
 
   /**
-   * Returns the meta object for the containment reference list '{@link gameoflife.gDSL.Model#getGreetings <em>Greetings</em>}'.
+   * Returns the meta object for the containment reference '{@link gameoflife.gDSL.Model#getGol <em>Gol</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Greetings</em>'.
-   * @see gameoflife.gDSL.Model#getGreetings()
+   * @return the meta object for the containment reference '<em>Gol</em>'.
+   * @see gameoflife.gDSL.Model#getGol()
    * @see #getModel()
    * @generated
    */
-  EReference getModel_Greetings();
+  EReference getModel_Gol();
 
   /**
-   * Returns the meta object for class '{@link gameoflife.gDSL.Greeting <em>Greeting</em>}'.
+   * Returns the meta object for class '{@link gameoflife.gDSL.GOL <em>GOL</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Greeting</em>'.
-   * @see gameoflife.gDSL.Greeting
+   * @return the meta object for class '<em>GOL</em>'.
+   * @see gameoflife.gDSL.GOL
    * @generated
    */
-  EClass getGreeting();
+  EClass getGOL();
 
   /**
-   * Returns the meta object for the attribute '{@link gameoflife.gDSL.Greeting#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link gameoflife.gDSL.GOL#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see gameoflife.gDSL.Greeting#getName()
-   * @see #getGreeting()
+   * @see gameoflife.gDSL.GOL#getName()
+   * @see #getGOL()
    * @generated
    */
-  EAttribute getGreeting_Name();
+  EAttribute getGOL_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link gameoflife.gDSL.GOL#getRules <em>Rules</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Rules</em>'.
+   * @see gameoflife.gDSL.GOL#getRules()
+   * @see #getGOL()
+   * @generated
+   */
+  EReference getGOL_Rules();
+
+  /**
+   * Returns the meta object for the containment reference '{@link gameoflife.gDSL.GOL#getGrid <em>Grid</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Grid</em>'.
+   * @see gameoflife.gDSL.GOL#getGrid()
+   * @see #getGOL()
+   * @generated
+   */
+  EReference getGOL_Grid();
+
+  /**
+   * Returns the meta object for class '{@link gameoflife.gDSL.Rules <em>Rules</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Rules</em>'.
+   * @see gameoflife.gDSL.Rules
+   * @generated
+   */
+  EClass getRules();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link gameoflife.gDSL.Rules#getRules <em>Rules</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Rules</em>'.
+   * @see gameoflife.gDSL.Rules#getRules()
+   * @see #getRules()
+   * @generated
+   */
+  EReference getRules_Rules();
+
+  /**
+   * Returns the meta object for class '{@link gameoflife.gDSL.Rule <em>Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Rule</em>'.
+   * @see gameoflife.gDSL.Rule
+   * @generated
+   */
+  EClass getRule();
+
+  /**
+   * Returns the meta object for the attribute '{@link gameoflife.gDSL.Rule#getState <em>State</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>State</em>'.
+   * @see gameoflife.gDSL.Rule#getState()
+   * @see #getRule()
+   * @generated
+   */
+  EAttribute getRule_State();
+
+  /**
+   * Returns the meta object for the attribute '{@link gameoflife.gDSL.Rule#getOperator <em>Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Operator</em>'.
+   * @see gameoflife.gDSL.Rule#getOperator()
+   * @see #getRule()
+   * @generated
+   */
+  EAttribute getRule_Operator();
+
+  /**
+   * Returns the meta object for the attribute '{@link gameoflife.gDSL.Rule#getAmount <em>Amount</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Amount</em>'.
+   * @see gameoflife.gDSL.Rule#getAmount()
+   * @see #getRule()
+   * @generated
+   */
+  EAttribute getRule_Amount();
+
+  /**
+   * Returns the meta object for class '{@link gameoflife.gDSL.Grid <em>Grid</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Grid</em>'.
+   * @see gameoflife.gDSL.Grid
+   * @generated
+   */
+  EClass getGrid();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link gameoflife.gDSL.Grid#getCell <em>Cell</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Cell</em>'.
+   * @see gameoflife.gDSL.Grid#getCell()
+   * @see #getGrid()
+   * @generated
+   */
+  EReference getGrid_Cell();
+
+  /**
+   * Returns the meta object for class '{@link gameoflife.gDSL.Cell <em>Cell</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Cell</em>'.
+   * @see gameoflife.gDSL.Cell
+   * @generated
+   */
+  EClass getCell();
+
+  /**
+   * Returns the meta object for the attribute '{@link gameoflife.gDSL.Cell#getX <em>X</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>X</em>'.
+   * @see gameoflife.gDSL.Cell#getX()
+   * @see #getCell()
+   * @generated
+   */
+  EAttribute getCell_X();
+
+  /**
+   * Returns the meta object for the attribute '{@link gameoflife.gDSL.Cell#getY <em>Y</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Y</em>'.
+   * @see gameoflife.gDSL.Cell#getY()
+   * @see #getCell()
+   * @generated
+   */
+  EAttribute getCell_Y();
+
+  /**
+   * Returns the meta object for enum '{@link gameoflife.gDSL.State <em>State</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>State</em>'.
+   * @see gameoflife.gDSL.State
+   * @generated
+   */
+  EEnum getState();
+
+  /**
+   * Returns the meta object for enum '{@link gameoflife.gDSL.Compare <em>Compare</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Compare</em>'.
+   * @see gameoflife.gDSL.Compare
+   * @generated
+   */
+  EEnum getCompare();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -190,22 +527,22 @@ public interface GDSLPackage extends EPackage
     EClass MODEL = eINSTANCE.getModel();
 
     /**
-     * The meta object literal for the '<em><b>Greetings</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Gol</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__GREETINGS = eINSTANCE.getModel_Greetings();
+    EReference MODEL__GOL = eINSTANCE.getModel_Gol();
 
     /**
-     * The meta object literal for the '{@link gameoflife.gDSL.impl.GreetingImpl <em>Greeting</em>}' class.
+     * The meta object literal for the '{@link gameoflife.gDSL.impl.GOLImpl <em>GOL</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see gameoflife.gDSL.impl.GreetingImpl
-     * @see gameoflife.gDSL.impl.GDSLPackageImpl#getGreeting()
+     * @see gameoflife.gDSL.impl.GOLImpl
+     * @see gameoflife.gDSL.impl.GDSLPackageImpl#getGOL()
      * @generated
      */
-    EClass GREETING = eINSTANCE.getGreeting();
+    EClass GOL = eINSTANCE.getGOL();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -213,7 +550,139 @@ public interface GDSLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GREETING__NAME = eINSTANCE.getGreeting_Name();
+    EAttribute GOL__NAME = eINSTANCE.getGOL_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Rules</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GOL__RULES = eINSTANCE.getGOL_Rules();
+
+    /**
+     * The meta object literal for the '<em><b>Grid</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GOL__GRID = eINSTANCE.getGOL_Grid();
+
+    /**
+     * The meta object literal for the '{@link gameoflife.gDSL.impl.RulesImpl <em>Rules</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see gameoflife.gDSL.impl.RulesImpl
+     * @see gameoflife.gDSL.impl.GDSLPackageImpl#getRules()
+     * @generated
+     */
+    EClass RULES = eINSTANCE.getRules();
+
+    /**
+     * The meta object literal for the '<em><b>Rules</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RULES__RULES = eINSTANCE.getRules_Rules();
+
+    /**
+     * The meta object literal for the '{@link gameoflife.gDSL.impl.RuleImpl <em>Rule</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see gameoflife.gDSL.impl.RuleImpl
+     * @see gameoflife.gDSL.impl.GDSLPackageImpl#getRule()
+     * @generated
+     */
+    EClass RULE = eINSTANCE.getRule();
+
+    /**
+     * The meta object literal for the '<em><b>State</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RULE__STATE = eINSTANCE.getRule_State();
+
+    /**
+     * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RULE__OPERATOR = eINSTANCE.getRule_Operator();
+
+    /**
+     * The meta object literal for the '<em><b>Amount</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RULE__AMOUNT = eINSTANCE.getRule_Amount();
+
+    /**
+     * The meta object literal for the '{@link gameoflife.gDSL.impl.GridImpl <em>Grid</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see gameoflife.gDSL.impl.GridImpl
+     * @see gameoflife.gDSL.impl.GDSLPackageImpl#getGrid()
+     * @generated
+     */
+    EClass GRID = eINSTANCE.getGrid();
+
+    /**
+     * The meta object literal for the '<em><b>Cell</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GRID__CELL = eINSTANCE.getGrid_Cell();
+
+    /**
+     * The meta object literal for the '{@link gameoflife.gDSL.impl.CellImpl <em>Cell</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see gameoflife.gDSL.impl.CellImpl
+     * @see gameoflife.gDSL.impl.GDSLPackageImpl#getCell()
+     * @generated
+     */
+    EClass CELL = eINSTANCE.getCell();
+
+    /**
+     * The meta object literal for the '<em><b>X</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CELL__X = eINSTANCE.getCell_X();
+
+    /**
+     * The meta object literal for the '<em><b>Y</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CELL__Y = eINSTANCE.getCell_Y();
+
+    /**
+     * The meta object literal for the '{@link gameoflife.gDSL.State <em>State</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see gameoflife.gDSL.State
+     * @see gameoflife.gDSL.impl.GDSLPackageImpl#getState()
+     * @generated
+     */
+    EEnum STATE = eINSTANCE.getState();
+
+    /**
+     * The meta object literal for the '{@link gameoflife.gDSL.Compare <em>Compare</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see gameoflife.gDSL.Compare
+     * @see gameoflife.gDSL.impl.GDSLPackageImpl#getCompare()
+     * @generated
+     */
+    EEnum COMPARE = eINSTANCE.getCompare();
 
   }
 

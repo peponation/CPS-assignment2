@@ -149,6 +149,10 @@ public class GameOfLife extends JFrame implements ActionListener {
             f_autoFill.setVisible(true);
         } else if (ae.getSource().equals(mi_game_reset)) {
             gb_gameBoard.resetBoard();
+            
+            // Add this line to load the grid from your DSL:
+            RulesOfLife.initializeGrid(gb_gameBoard.point); 
+            
             gb_gameBoard.repaint();
         } else if (ae.getSource().equals(mi_game_play)) {
             setGameBeingPlayed(true);

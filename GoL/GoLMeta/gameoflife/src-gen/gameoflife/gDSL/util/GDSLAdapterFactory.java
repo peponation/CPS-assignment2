@@ -81,9 +81,29 @@ public class GDSLAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
-      public Adapter caseGreeting(Greeting object)
+      public Adapter caseGOL(GOL object)
       {
-        return createGreetingAdapter();
+        return createGOLAdapter();
+      }
+      @Override
+      public Adapter caseRules(Rules object)
+      {
+        return createRulesAdapter();
+      }
+      @Override
+      public Adapter caseRule(Rule object)
+      {
+        return createRuleAdapter();
+      }
+      @Override
+      public Adapter caseGrid(Grid object)
+      {
+        return createGridAdapter();
+      }
+      @Override
+      public Adapter caseCell(Cell object)
+      {
+        return createCellAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -123,16 +143,76 @@ public class GDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link gameoflife.gDSL.Greeting <em>Greeting</em>}'.
+   * Creates a new adapter for an object of class '{@link gameoflife.gDSL.GOL <em>GOL</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see gameoflife.gDSL.Greeting
+   * @see gameoflife.gDSL.GOL
    * @generated
    */
-  public Adapter createGreetingAdapter()
+  public Adapter createGOLAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link gameoflife.gDSL.Rules <em>Rules</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see gameoflife.gDSL.Rules
+   * @generated
+   */
+  public Adapter createRulesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link gameoflife.gDSL.Rule <em>Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see gameoflife.gDSL.Rule
+   * @generated
+   */
+  public Adapter createRuleAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link gameoflife.gDSL.Grid <em>Grid</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see gameoflife.gDSL.Grid
+   * @generated
+   */
+  public Adapter createGridAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link gameoflife.gDSL.Cell <em>Cell</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see gameoflife.gDSL.Cell
+   * @generated
+   */
+  public Adapter createCellAdapter()
   {
     return null;
   }
