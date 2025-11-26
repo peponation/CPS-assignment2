@@ -1,0 +1,15 @@
+Game ConwaysLife
+
+Rules {
+    Die if neighbors < 2
+    Live if neighbors = 2
+    Live if neighbors = 3
+    Die if neighbors > 3
+    ToAlive if neighbors = 3
+}
+ 
+Grid {
+    (1, 2)
+    (2, 2)
+    (3, 2)
+}

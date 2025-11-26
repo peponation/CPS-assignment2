@@ -1,0 +1,35 @@
+grammar gol.GDSL with org.eclipse.xtext.common.Terminals
+
+generate gDSL "http://www.GDSL.gameoflife"
+
+Model:
+    gol=GOL;
+
+GOL:
+    'Game' name=ID
+    rules=Rules
+    grid=Grid;
+    
+Rules:
+	'Rules' '{' rules += Rule* '}'
+;
+
+Rule:
+	state=State 'if' 'neighbors' operator = Compare amount = INT
+;
+
+enum State:
+	Live = 'Live' | Dead = 'Dead' | Die = 'Die' | ToAlive = 'ToAlive'
+;
+
+enum Compare:
+	LT = '<' | GT = '>' | EQ = '='
+;
+
+Grid:
+	'Grid' '{' cell += Cell* '}'
+;
+
+Cell:
+	'(' x = INT ',' y = INT ')'
+;
