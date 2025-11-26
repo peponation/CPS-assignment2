@@ -12,12 +12,12 @@ import gol.gDSL.Rule
 class GDSLGenerator extends AbstractGenerator {
 
     override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-        // 1. Find the GOL (Game of Life) model in the file
+        // Find the GOL model in the file
         val root = resource.allContents.filter(GOL).head
 
         if (root !== null) {
-            // 2. Generate the RulesOfLife.java file
-            // We use the package "GameOfLife" to match your provided files
+            //Generate the RulesOfLife.java file
+            // We use the package "GameOfLife" to match the provided files
             fsa.generateFile("GameOfLife/RulesOfLife.java", '''
 				package GameOfLife;
 				
@@ -72,21 +72,17 @@ class GDSLGenerator extends AbstractGenerator {
         // We only generate code for cases where a cell results in being ALIVE.
         // "Die" or "Dead" results are handled by simply NOT adding the point to the list.
         
-        // 1. Determine the Check: Is the cell currently Alive or Dead?
         var currentStatusCheck = ""
-        
-        if (rule.state == State.LIVE) {
-            // Rule: "Live if..." -> Cell must currently be ALIVE (true)
+
+        if (rule.state == State.LIVE) {             // Rule: "Live if..." -> Cell must currently be ALIVE (true)
             currentStatusCheck = "gameBoard[i][j]" 
-        } else if (rule.state == State.TO_ALIVE) {
-            // Rule: "BecomeAlive if..." -> Cell must currently be DEAD (false)
+        } else if (rule.state == State.TO_ALIVE) {  // Rule: "BecomeAlive if..." -> Cell must currently be DEAD (false)
             currentStatusCheck = "!gameBoard[i][j]"
-        } else {
-            // If the rule is "Die" or "Dead", we generate nothing (return empty string)
+        } else { 									// If the rule is "Die" or "Dead", we generate nothing (return empty string)
             return "" 
         }
 
-        // 2. Determine the Operator (<, >, =)
+        // Determine the Operator from ENUM
         var operatorSymbol = ""
         switch (rule.operator) {
             case Compare.LT: operatorSymbol = "<"
@@ -94,7 +90,7 @@ class GDSLGenerator extends AbstractGenerator {
             case Compare.EQ: operatorSymbol = "=="
         }
 
-        // 3. Assemble the Java If-statement
+        // Assemble the Java If-statement
         return '''
 			// Rule: «rule.state» if neighbors «operatorSymbol» «rule.amount»
 			if ((«currentStatusCheck») && (surrounding «operatorSymbol» «rule.amount»)) {
