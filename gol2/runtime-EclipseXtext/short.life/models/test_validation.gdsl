@@ -1,0 +1,12 @@
+Game TestValidation
+
+Rules {
+    Live if neighbors = 3
+    Die if neighbors = 3    // Should trigger "Conflicting rule" error
+    Live if neighbors > 9   // Should trigger "more than 8 neighbors" error
+}
+
+Grid {
+    (1, 1)
+    (1, 1)                  // Should trigger "Duplicate cell" warning
+}

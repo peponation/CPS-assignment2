@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class RulesOfLife {
     
     /* * GENERATED METHOD: computeSurvivors
-     * Based on DSL rules defined in: ConwaysLife
+     * Based on DSL rules defined in: TestValidation
      */
     public static void computeSurvivors(boolean[][] gameBoard, ArrayList<Point> survivingCells) {
         // Iterate through the array (leaving a 1-pixel border to avoid IndexOutOfBounds)
@@ -25,16 +25,12 @@ public class RulesOfLife {
                 if (gameBoard[i+1][j+1]) { surrounding++; }
 
                 /* GENERATED RULES */
-// Rule: Live if neighbors == 2
-if ((gameBoard[i][j]) && (surrounding == 2)) {
-    survivingCells.add(new Point(i-1, j-1));
-}
 // Rule: Live if neighbors == 3
 if ((gameBoard[i][j]) && (surrounding == 3)) {
     survivingCells.add(new Point(i-1, j-1));
 }
-// Rule: ToAlive if neighbors == 3
-if ((!gameBoard[i][j]) && (surrounding == 3)) {
+// Rule: Live if neighbors > 9
+if ((gameBoard[i][j]) && (surrounding > 9)) {
     survivingCells.add(new Point(i-1, j-1));
 }
             }
@@ -46,8 +42,7 @@ if ((!gameBoard[i][j]) && (surrounding == 3)) {
  */
     public static void initializeGrid(ArrayList<Point> points) {
         points.clear();
-        points.add(new Point(1, 2));
-        points.add(new Point(2, 2));
-        points.add(new Point(3, 2));
+        points.add(new Point(1, 1));
+        points.add(new Point(1, 1));
     }
 }
